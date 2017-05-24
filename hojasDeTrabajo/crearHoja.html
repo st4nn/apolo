@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="bootstrap admin template">
+	<meta name="author" content="">
+
+  	<title>Crear Hoja</title>
+
+	<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<fixedHead>
+			  <!-- Stylesheets -->
+			  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+			  <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
+			  <link rel="stylesheet" href="../assets/css/site.css">
+
+			  <!-- Plugins -->
+			  <!--<link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">-->
+			  <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+			  <link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
+			  <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
+			  <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
+			  <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
+
+			  <!-- Fonts -->
+			  <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
+			  <link rel="stylesheet" href="../assets/fonts/font-awesome/font-awesome.min.css">
+			  <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
+			  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+			  <!--[if lt IE 9]>
+			    <script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
+			    <![endif]-->
+
+			  <!--[if lt IE 10]>
+			    <script src="../assets/vendor/media-match/media.match.min.js"></script>
+			    <script src="../assets/vendor/respond/respond.min.js"></script>
+			    <![endif]-->
+
+			  <!-- Scripts -->
+			  <script src="../assets/vendor/modernizr/modernizr.js"></script>
+			  <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+
+			  <script>
+			    Breakpoints();
+			  </script>
+			  <!-- Plugins For Alertify -->
+			  <link rel="stylesheet" href="../assets/vendor/alertify-js/alertify.css">
+			  <link rel="stylesheet" href="../assets/examples/css/advanced/alertify.css"> 
+	</fixedHead>
+	<customCss>
+		<link rel='stylesheet' href='../assets/vendor/datatables-bootstrap/dataTables.bootstrap.css'>
+		<link rel='stylesheet' href='../assets/vendor/datatables-fixedheader/dataTables.fixedHeader.css'>
+		<link rel='stylesheet' href='../assets/vendor/datatables-responsive/dataTables.responsive.css'>
+
+		<link rel='stylesheet' href='../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css'>
+	</customCss>
+</head>
+<body>
+	<header></header>
+	<sidebar></sidebar>
+	<content>
+		<div class="page">
+    		<div class="">
+				<div class="container-fluid">
+					<div id="cntCrearHoja_Ordenes" class="panel">
+						<div class="panel-body">
+							<table id="tblCrearHoja_Ordenes" class="table">
+								<thead>
+									<th>Consecutivo Interno</th>
+									<th>OT</th>
+									<th>Codigo Radicado</th>
+									<th>Prioridad</th>
+									<th>Zona</th>
+									<th>Municipio</th>
+									<th>Localidad</th>
+									<th>fecha de Creación</th>
+									<th></th>
+								</thead>
+								<tbody class="table-hover"></tbody>
+							</table>
+						</div>
+					</div>
+					<hr>
+					<div id="cntCrearHoja_DetalleOT" class="hide">
+						<div class="col-md-12">
+								<button id="btnCrearHoja_VerListado" class="col-md-6 btn btn-warning" type="button"><i class="icon wb-arrow-left"></i> Ver Listado</button><br><br>
+								<span>Prioridad:</span>
+								<span id="lblCrearHoja_Prioridad" class="label"></span>
+							</div>
+							<br><br><br><br><br>
+
+						<input type="hidden" id="txtCrearHoja_idOt">
+						<div class="col-md-6">
+							<div class="panel">
+								<div class="panel-title">OT</div>
+								<div class="panel-body">
+									<h1><small>Consecutivo Interno:</small><span id="lblCrearHoja_id"></span></h1>
+									<p class="col-md-6"><strong class="">Codigo OT:</strong> <span id="lblCrearHoja_Codigo"></span></p>
+									<p class="col-md-6"><strong class="">Radicado:</strong> <span id="lblCrearHoja_Radicado"></span></p>
+									<p class="col-md-6"><strong class="">Nombre Proyecto:</strong> <span id="lblCrearHoja_Nombre"></span></p>
+									<p class="col-md-12"><strong class="">Alcance:</strong> <span id="lblCrearHoja_Alcance" class="text-justify"></span></p>
+									<p class="col-md-6"><strong class="">Zona:</strong> <span id="lblCrearHoja_Zona"></span></p>
+									<p class="col-md-6"><strong class="">Municipio:</strong> <span id="lblCrearHoja_Municipio"></span></p>
+									<p class="col-md-12"><strong class="">Localidad:</strong> <span id="lblCrearHoja_Localidad"></span></p>
+									<p class="col-md-12"><strong class="">Tiempo de Entrega:</strong> <span id="lblCrearHoja_TiempoDeEntrega"></span></p>
+								</div>
+							</div>
+							<div class="panel panel-bordered">
+								<div class="panel-heading">
+									<h4 class="panel-title">Datos de Contacto</h4>
+								</div>
+								<div class="panel-body">
+									<p class="col-md-12"><strong class="">Contacto:</strong> <span id="lblCrearHoja_contactoNombre"></span></p>
+									<p class="col-md-12"><strong class="">Telefono:</strong> <span id="lblCrearHoja_contactoTelefono"></span></p>
+									<p class="col-md-12"><strong class="">Dirección:</strong> <span id="lblCrearHoja_contactoDireccion"></span></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 panel">
+							<div class="panel-title">Archivos Cargados</div>
+	  						<div class="panel-body">
+		  						<div class="col-md-8">
+							        <h5 class="example-title">Cargar Archivo</h5>
+							        <form class="form-group" id="frmCrearHoja_Archivos" action="" method="post" enctype="multipart/form-data">
+							          <div class="input-group input-group-file">
+							            <input type="text" class="form-control inputText" readonly="">
+							            <span class="input-group-btn">
+							              <span class="btn btn-success btn-file">
+							                <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+							                Buscar
+							                <input type="file" name="archivo" class="inputControl">
+							              </span>
+							              <button type="submit" class="btn btn-success">
+							                <i class="icon wb-upload" aria-hidden="true"></i> Subir
+							              </button>
+							            </span>
+							          </div>
+							          <div class="progress progress-lg">
+							            <div id="txtCrearHoja_ArchivoProgreso" class="progress-bar progress-bar-success" style="width: 0%;" role="progressbar"></div>
+							          </div>
+							        </form>
+							    </div>
+						      	<div class="col-md-10">
+						      		<ul id="cntCrearHoja_Archivos" class="list-group list-group-dividered list-group-full">
+					                
+					            	</ul>
+						      	</div>
+							</div>
+						</div>
+						<div class="col-md-12 panel">
+							<div class="panel-title">Cronograma</div>
+							<div class="panel-body container-fluid">
+								<div id="cntCrearHoja_Cronograma" class="col-md-12">
+									<div class="col-md-6">
+										<div class="row margin-5">
+											<div class="checkbox-custom checkbox-primary col-md-12">
+						                    	<input id="txtCrearHoja_chkLevantamiento" type="checkbox" disabled>
+						                    	<label for="txtCrearHoja_chkLevantamiento"> <h5>Levantamiento</h5></label>
+						                    </div>
+											<div>
+												<div class="input-daterange">
+													<div class="input-group">
+													  <span class="input-group-addon">
+													    <i class="icon wb-calendar" aria-hidden="true"></i>
+													  </span>
+													  <input id="txtCrearHoja_chkLevantamiento_FechaIni" type="text" class="form-control guardar" name="start" />
+													</div>
+													<div class="input-group">
+													  <span class="input-group-addon">hasta</span>
+													  <input id="txtCrearHoja_chkLevantamiento_FechaFin" type="text" class="form-control guardar" name="end" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row margin-5">
+											<div class="checkbox-custom checkbox-primary col-md-12">
+						                    	<input id="txtCrearHoja_chkDibujo" type="checkbox" disabled>
+						                    	<label for="txtCrearHoja_chkDibujo"> <h5>Dibujo</h5></label>
+						                    </div>
+											<div>
+												<div class="input-daterange">
+													<div class="input-group">
+													  <span class="input-group-addon">
+													    <i class="icon wb-calendar" aria-hidden="true"></i>
+													  </span>
+													  <input id="txtCrearHoja_chkDibujo_FechaIni" type="text" class="form-control guardar" name="start" />
+													</div>
+													<div class="input-group">
+													  <span class="input-group-addon">hasta</span>
+													  <input id="txtCrearHoja_chkDibujo_FechaFin" type="text" class="form-control guardar" name="end" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="row margin-5">
+											<div class="checkbox-custom checkbox-primary col-md-12">
+						                    	<input id="txtCrearHoja_chkDiseno" type="checkbox" disabled>
+						                    	<label for="txtCrearHoja_chkDiseno"> <h5>Diseño</h5></label>
+						                    </div>
+											<div>
+												<div class="input-daterange">
+													<div class="input-group">
+													  <span class="input-group-addon">
+													    <i class="icon wb-calendar" aria-hidden="true"></i>
+													  </span>
+													  <input id="txtCrearHoja_chkDiseno_FechaIni" type="text" class="form-control guardar" name="start" />
+													</div>
+													<div class="input-group">
+													  <span class="input-group-addon">hasta</span>
+													  <input id="txtCrearHoja_chkDiseno_FechaFin" type="text" class="form-control guardar" name="end" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row margin-5">
+											<div class="checkbox-custom checkbox-primary col-md-12">
+						                    	<input id="txtCrearHoja_chkConsolidacion" type="checkbox" disabled>
+						                    	<label for="txtCrearHoja_chkConsolidacion"> <h5>Revisión y Consolidación</h5></label>
+						                    </div>
+											<div>
+												<div class="input-daterange">
+													<div class="input-group">
+													  <span class="input-group-addon">
+													    <i class="icon wb-calendar" aria-hidden="true"></i>
+													  </span>
+													  <input id="txtCrearHoja_chkConsolidacion_FechaIni" type="text" class="form-control guardar" name="start" />
+													</div>
+													<div class="input-group">
+													  <span class="input-group-addon">hasta</span>
+													  <input id="txtCrearHoja_chkConsolidacion_FechaFin" type="text" class="form-control guardar" name="end" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+										<div class="row margin-5">
+											<div class="checkbox-custom checkbox-success col-md-12">
+						                    	<input id="txtCrearHoja_chkEntrega" type="checkbox" checked="true" disabled>
+						                    	<label for="txtCrearHoja_chkEntrega"> <h5>Entrega</h5></label>
+						                    </div>
+											<div>
+												<div class="disabled">
+													<h1><span id="lblCrearHoja_FechaEntrega" class="label label-success"></span></h1>
+													<input id="txtCrearHoja_chkEntrega_FechaFin" type="hidden" class="form-control guardar">
+												</div>
+											</div>
+										</div>
+								</div>
+							</div>
+						</div>	
+						<div class="col-md-12 panel">
+							<div class="panel-title">Actividades:</div>
+							<div class="panel-body">
+								<form id="frmCrearHoja_Actividades">
+									<table id="tblCrearHoja_Funciones" class="table">
+										<thead>
+											<th class="col-md-2">Nombre</th>
+											<th class="col-md-2">Descripción</th>
+											<th class="col-md-4">Observaciones</th>
+											<th class="">Tiempo Estimado</th>
+											<th class="col-md-2">Responsable</th>
+										</thead>
+										<tfoot></tfoot>
+										<tbody class="table-hover"></tbody>
+										
+									</table>
+									<div class="form-group col-md-12 font-size-20 text-right">
+				                      <button type="submit" id="btnCrearHoja_Submit" class="btn btn-success margin-horizontal-50"><i class="icon fa-save"></i>Guardar</button>
+				                    </div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    	</div>
+	</content>
+	<fixedScripts>
+		<script src="../assets/vendor/jquery/jquery.js"></script>
+		<script src="../js/funciones.js"></script>
+		<script src="../js/plugins.js"></script>
+		<script src="../js/abriModulo.js"></script>
+	</fixedScripts>
+	<footer>
+		  <!-- Core  -->
+		  <!--<script src="../assets/vendor/jquery/jquery.js"></script>-->
+		  <script src="../assets/vendor/bootstrap/bootstrap.js"></script>
+		  <!--<script src="../assets/vendor/animsition/jquery.animsition.js"></script>-->
+		  <script src="../assets/vendor/asscroll/jquery-asScroll.js"></script>
+		  <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+		  <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+		  <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+		  <!-- Plugins -->
+		  <script src="../assets/vendor/switchery/switchery.min.js"></script>
+		  <script src="../assets/vendor/intro-js/intro.js"></script>
+		  <script src="../assets/vendor/screenfull/screenfull.js"></script>
+		  <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+
+		  <!-- Scripts -->
+		  <script src="../assets/js/core.js"></script>
+		  <script src="../assets/js/site.js"></script>
+
+		  <script src="../assets/js/sections/menu.js"></script>
+		  <script src="../assets/js/sections/menubar.js"></script>
+		  <script src="../assets/js/sections/gridmenu.js"></script>
+		  <script src="../assets/js/sections/sidebar.js"></script>
+
+		  <script src="../assets/js/configs/config-colors.js"></script>
+		  <script src="../assets/js/configs/config-tour.js"></script>
+
+		  <script src="../assets/js/components/asscrollable.js"></script>
+		  <!--<script src="../assets/js/components/animsition.js"></script>-->
+		  <script src="../assets/js/components/slidepanel.js"></script>
+		  <script src="../assets/js/components/switchery.js"></script>
+
+		  <script src="../assets/vendor/alertify-js/alertify.js"></script>
+		  <script src="../assets/js/components/alertify-js.js"></script> 
+
+		  <customscripts>
+			<script src="../assets/vendor/datatables/jquery.dataTables.js"></script>
+			<script src="../assets/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+			<script src="../assets/vendor/datatables-tabletools/dataTables.tableTools.js"></script>
+			<script src="../assets/js/components/datatables.js"></script>
+			
+			<script src="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>	
+
+			<script src="../assets/js/components/jquery.form.js"></script>
+		</customscripts>
+	</footer>
+</body>
+</html>

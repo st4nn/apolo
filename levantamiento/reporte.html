@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="bootstrap admin template">
+	<meta name="author" content="">
+
+  	<title>Mis Actividades</title>
+
+	<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<fixedHead>
+			  <!-- Stylesheets -->
+			  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+			  <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
+			  <link rel="stylesheet" href="../assets/css/site.css">
+
+			  <!-- Plugins -->
+			  <!--<link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">-->
+			  <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+			  <link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
+			  <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
+			  <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
+			  <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
+			  <link rel="stylesheet" href="../assets/examples/css/structure/ribbon.css">
+
+			  <!-- Fonts -->
+			  <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
+			  <link rel="stylesheet" href="../assets/fonts/font-awesome/font-awesome.min.css">
+			  <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
+			  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+			  <link rel="stylesheet" href="../assets/vendor/magnific-popup/magnific-popup.css">
+
+			  <!--[if lt IE 9]>
+			    <script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
+			    <![endif]-->
+
+			  <!--[if lt IE 10]>
+			    <script src="../assets/vendor/media-match/media.match.min.js"></script>
+			    <script src="../assets/vendor/respond/respond.min.js"></script>
+			    <![endif]-->
+
+			  <!-- Scripts -->
+			  <script src="../assets/vendor/modernizr/modernizr.js"></script>
+			  <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+
+			  <script>
+			    Breakpoints();
+			  </script>
+			  <!-- Plugins For Alertify -->
+			  <link rel="stylesheet" href="../assets/vendor/alertify-js/alertify.css">
+			  <link rel="stylesheet" href="../assets/examples/css/advanced/alertify.css"> 
+	</fixedHead>
+	<customCss>
+		<link rel='stylesheet' href='../assets/vendor/datatables-bootstrap/dataTables.bootstrap.css'>
+		<link rel='stylesheet' href='../assets/vendor/datatables-fixedheader/dataTables.fixedHeader.css'>
+		<link rel='stylesheet' href='../assets/vendor/datatables-responsive/dataTables.responsive.css'>
+
+		<link rel='stylesheet' href='../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css'>
+	</customCss>
+</head>
+<body>
+	<header></header>
+	<sidebar></sidebar>
+	<content>
+		<div class="page">
+			<div id="cntLevantamiento_Busqueda" class="panel panel-bordered">
+				<div class="panel-heading">
+					<h4 class="panel-title">Actividades con Levantamientos</h4>
+				</div>
+				<div class="panel-body">
+					<button id="btnLevantamiento_ActualizarReporte" class="btn btn-success btn-block"><i class="icon wb-refres"></i> Actualizar</button>
+					<table class="table table-hover dataTable table-striped width-full" id="tblLevantamiento_Resultados">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Codigo Interno</th>
+								<th>OT</th>
+								<th>Codigo Radicado</th>
+								<th>Nombre de Proyecto</th>
+								<th>Zona</th>
+								<th>Municipio</th>
+								<th>Alcance</th>
+								<th>Prioridad</th>
+								<th>Tipo de Proyecto</th>
+								<th>Descripción</th>
+								<th>Estado</th>
+								<th>fecha Creación</th>
+								<th>Tiempo Transcurrido</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th></th>
+								<th>Codigo Interno</th>
+								<th>OT</th>
+								<th>Codigo Radicado</th>
+								<th>Nombre de Proyecto</th>
+								<th>Zona</th>
+								<th>Municipio</th>
+								<th>Alcance</th>
+								<th>Prioridad</th>
+								<th>Tipo de Proyecto</th>
+								<th>Descripción</th>
+								<th>Estado</th>
+								<th>fecha Creación</th>
+								<th>Tiempo Transcurrido</th>
+								<th></th>
+							</tr>
+						</tfoot>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div id="cntLevantamiento_Ficha" class="hide">
+				<input type="hidden" id="txtReporte_idProyecto">
+				          <!-- Panel -->
+	          <div class="panel">
+	            <div class="panel-body nav-tabs-animate">
+	          		<button id="btnLevantamiento_VolverALaBusqueda" class="btn btn-primary btn-block"> Volver a la búsqueda</button>
+	              <ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+	                <li class="active" role="presentation">
+	                  <a id="bntReporte_AbrirMapa" data-toggle="tab" href="#tabReporte_Mapa" aria-controls="tabReporte_Mapa" role="tab">
+	                    <i class="icon wb-map"></i>Mapa 
+	                  </a>
+	                </li>
+	                <li role="presentation" id="bntReporte_AbrirTabla">
+	                  <a  data-toggle="tab" href="#tabReporte_Tabla" aria-controls="tabReporte_Tabla" role="tab">
+	                    <i class="icon wb-table"></i> Datos
+	                  </a>
+	                </li>
+	                <li role="presentation">
+	                  <a data-toggle="tab" href="#tabReporte_Fotos" aria-controls="tabReporte_Fotos" role="tab">
+	                    <i class="icon wb-image"></i> Fotos
+	                  </a>
+	                </li>
+	                <li role="presentation">
+	                  <a data-toggle="tab" href="#tabReporte_Archivos" aria-controls="tabReporte_Archivos" role="tab">
+	                    <i class="icon wb-attach-file"></i> Archivos
+	                  </a>
+	                </li>
+	              </ul>
+
+	              <div class="tab-content">
+	                <div class="tab-pane active animation-slide-left" id="tabReporte_Mapa" role="tabpanel">
+		                <div class="cols-sm-12 row">
+		                  <div class="col-sm-8 padding-10">
+		                    <div class="col-md-12" style="height: 70vh;" id="cntReporte_Mapa"></div>
+		                    <button class="btn btn-success btn-block" id="btnReporte_DescargarKML"><i class="icon wb-download"></i> Descargar KML</button>
+		                  </div>
+		                  <div class="col-sm-4">
+		                    <div class="example" style="min-height: 40vh;max-height: 42vh; overflow-y: scroll;">
+		                      <div class="ribbon">
+		                        <span class="ribbon-inner">Datos del Punto</span>
+		                      </div>
+		                      <div id="cntReporte_Datos">
+		                      	
+		                      </div>		                      
+		                    </div>
+
+		                    <div class="example" style="min-height: 30vh;max-height: 32vh; overflow-y: scroll;">
+		                      <div class="ribbon">
+		                        <span class="ribbon-inner">Fotos</span>
+		                      </div>
+		                      <div id="cntReporte_Imagenes">
+		                      	
+		                      </div>
+		                    </div>
+		                  </div>
+		                </div>
+	                </div>
+	              
+	                <div class="tab-pane animation-slide-left" id="tabReporte_Tabla" role="tabpanel">
+	                  <div class="col-md-12 padding-3">
+	                    <div id="cntReporte_Tabla" class="col-md-12 margin-top-50"></div>
+	                  </div>
+	                </div>
+
+	                <div class="tab-pane animation-slide-left" id="tabReporte_Fotos" role="tabpanel">
+	                  <div class="col-md-12 padding-3">
+	                    <ul  id="cntReporte_Fotos" class="list-group">
+
+	                    </ul>
+	                  </div>
+	                </div>
+
+	                <div class="tab-pane animation-slide-left" id="tabReporte_Archivos" role="tabpanel">
+	                  <div class="col-md-12 padding-10 margin-top-20">
+	                      <h4 class="example-title">Agregar Archivos</h4>
+	                      <div class="col-md-8">
+	                          <h5 class="example-title">Cargar Archivo</h5>
+	                          <form class="form-group" id="frmReporte_Archivos" action="" method="post" enctype="multipart/form-data">
+	                            <div class="input-group input-group-file">
+	                              <input type="text" class="form-control inputText" readonly="">
+	                              <span class="input-group-btn">
+	                                <span class="btn btn-success btn-file">
+	                                  <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+	                                  Buscar
+	                                  <input type="file" name="archivo" class="inputControl">
+	                                </span>
+	                                <button type="submit" class="btn btn-success">
+	                                  <i class="icon wb-upload" aria-hidden="true"></i> Subir
+	                                </button>
+	                              </span>
+	                            </div>
+	                            <div class="progress progress-lg">
+	                              <div id="txtReporte_ArchivoProgreso" class="progress-bar progress-bar-success" style="width: 0%;" role="progressbar"></div>
+	                            </div>
+	                          </form>
+	                        </div>
+	                        <div class="col-md-12">
+	                          
+	                        <img id="imgReporte_Archivos_Cargando" src="../assets/preloader.gif" class="pull-right hide" alt="...">
+	                          <button class="btn btn-warning coll-md-4 pull-right" id="btnReporte_Archivos_DescargarTodos" idProyecto="0">
+	                              <i class="icon wb-download"></i> Descargar Todos
+	                          </button>
+	                        </div>
+	                        <div class="col-md-10">
+	                          <ul id="cntReporte_Archivos" class="list-group list-group-dividered list-group-full">
+	                                
+	                           </ul>
+	                        </div>
+	                  </div>
+	                </div>
+	              </div>
+
+	            </div>
+	          </div>
+			</div>
+		</div>
+	</content>
+	<fixedScripts>
+		<script src="../assets/vendor/jquery/jquery.js"></script>
+		<script src="../js/funciones.js"></script>
+		<script src="../js/plugins.js"></script>
+		<script src="../js/abriModulo.js"></script>
+	</fixedScripts>
+	<footer>
+		  <!-- Core  -->
+		  <!--<script src="../assets/vendor/jquery/jquery.js"></script>-->
+		  <script src="../assets/vendor/bootstrap/bootstrap.js"></script>
+		  <!--<script src="../assets/vendor/animsition/jquery.animsition.js"></script>-->
+		  <script src="../assets/vendor/asscroll/jquery-asScroll.js"></script>
+		  <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+		  <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+		  <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+		  <!-- Plugins -->
+		  <script src="../assets/vendor/switchery/switchery.min.js"></script>
+		  <script src="../assets/vendor/intro-js/intro.js"></script>
+		  <script src="../assets/vendor/screenfull/screenfull.js"></script>
+		  <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+
+		  <!-- Scripts -->
+		  <script src="../assets/js/core.js"></script>
+		  <script src="../assets/js/site.js"></script>
+
+		  <script src="../assets/js/sections/menu.js"></script>
+		  <script src="../assets/js/sections/menubar.js"></script>
+		  <script src="../assets/js/sections/gridmenu.js"></script>
+		  <script src="../assets/js/sections/sidebar.js"></script>
+
+		  <script src="../assets/js/configs/config-colors.js"></script>
+		  <script src="../assets/js/configs/config-tour.js"></script>
+
+		  <script src="../assets/js/components/asscrollable.js"></script>
+		  <!--<script src="../assets/js/components/animsition.js"></script>-->
+		  <script src="../assets/js/components/slidepanel.js"></script>
+		  <script src="../assets/js/components/switchery.js"></script>
+
+		  <script src="../assets/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+
+		  <script src="../assets/vendor/alertify-js/alertify.js"></script>
+		  <script src="../assets/js/components/alertify-js.js"></script> 
+
+		  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCqsaOPb3d9wCtzrh-7XGN4dnMy44qV5ns"></script>
+		  <script src="../assets/vendor/gmaps/gmaps.js"></script>
+		  <script src="../assets/js/components/gmaps.js"></script>
+
+		  <customscripts>
+				<script src="../assets/vendor/datatables/jquery.dataTables.js"></script>
+				<script src="../assets/vendor/datatables-bootstrap/dataTables.bootstrap.js"></script>
+				<script src="../assets/vendor/datatables-tabletools/dataTables.tableTools.js"></script>
+				<script src="../assets/js/components/datatables.js"></script>
+				
+				<script src="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>	
+			</customscripts>
+
+		
+	</footer>
+</body>
+</html>

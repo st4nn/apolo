@@ -1,0 +1,32 @@
+.page-login:before {
+  background-image: url("../../images/login.jpg");
+}
+.page-login form {
+  width: 340px;
+  margin: 30px 0;
+}
+.page-login form a {
+  margin-left: 20px;
+}
+@media (max-width: 767px) {
+  .page-login form {
+    width: auto;
+  }
+  .contenedorLogoIndex 
+  {
+  	width: 100%;
+  	height: 140px;
+  	background: white;
+  	border: none;
+  }
+}
+.contenedorLogoIndex 
+{
+	position: absolute;
+	float: left;
+	  border-style: solid;
+	  border-width: 80px 40px 0px 0px;
+	  border-color: white transparent transparent transparent;
+	  transform: scale(1.0001);
+	display: inline-block;
+}

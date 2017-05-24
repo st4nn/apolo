@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="bootstrap admin template">
+	<meta name="author" content="">
+
+  	<title>Editar Orden</title>
+
+	<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<fixedHead>
+			  <!-- Stylesheets -->
+			  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+			  <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
+			  <link rel="stylesheet" href="../assets/css/site.css">
+
+			  <!-- Plugins -->
+			  <!--<link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">-->
+			  <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+			  <link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
+			  <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
+			  <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
+			  <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
+
+			  <!-- Fonts -->
+			  <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
+			  <link rel="stylesheet" href="../assets/fonts/font-awesome/font-awesome.min.css">
+			  <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
+			  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+			  <link rel="stylesheet" href="../../assets/examples/css/uikit/modals.css">
+			  <link rel="stylesheet" href="../assets/examples/css/structure/ribbon.css">
+			  <link rel="stylesheet" href="../assets/examples/css/structure/alerts.css">
+
+			  <!--[if lt IE 9]>
+			    <script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
+			    <![endif]-->
+
+			  <!--[if lt IE 10]>
+			    <script src="../assets/vendor/media-match/media.match.min.js"></script>
+			    <script src="../assets/vendor/respond/respond.min.js"></script>
+			    <![endif]-->
+
+			  <!-- Scripts -->
+			  <script src="../assets/vendor/modernizr/modernizr.js"></script>
+			  <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+
+			  <script>
+			    Breakpoints();
+			  </script>
+			  <!-- Plugins For Alertify -->
+			  <link rel="stylesheet" href="../assets/vendor/alertify-js/alertify.css">
+			  <link rel="stylesheet" href="../assets/examples/css/advanced/alertify.css"> 
+	</fixedHead>
+	<customCss>
+		<link rel='stylesheet' href='../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css'>
+		<link rel='stylesheet' href='../assets/vendor/jt-timepicker/jquery-timepicker.css'>
+	</customCss>
+</head>
+<body>
+	<header></header>
+	<sidebar></sidebar>
+	<content>
+		<div class="page">
+			<input id="txtReporte_idProyecto" type="hidden"> 
+    		<div class="panel">
+				<div class="panel-body container-fluid">
+					<div class="col-md-12 margin-bottom-30">
+						<div class="col-md-4">
+							<a href="verOrden.html" class="btn btn-info"> <i class="icon wb-arrow-left"></i> Volver a la búsqueda</a>
+							<br><br>
+							<div class="alert dark alert-icon alert-info" role="alert">
+			                  <i class="icon wb-info" aria-hidden="true"></i> <span id="lblVerOrden_Estado"></span>
+			                </div>
+						</div>
+						<div class="col-md-3 pull-right">
+							<button id="btnverOrden_Borrar" class="btn btn-danger margin-5 btn-block"> <i class="icon wb-trash"></i> Borrar Orden</button>
+							<button id="btnverOrden_Anular" class="btn btn-warning margin-5 btn-block"> <i class="icon fa-recycle"></i> Anular Orden</button>
+							<button id="btnverOrden_Rechazar" class="btn btn-warning margin-5 btn-block"> <i class="icon fa-sign-out"></i> Rechazar Orden</button>
+							<button id="btnverOrden_VisitaFallida" class="btn btn-warning margin-5 btn-block"> <i class="icon fa-thumbs-down"></i> Visita Fallida</button>
+							<button id="btnverOrden_CancelarOT" idEstado="0" class="btn btn-danger margin-5 btn-block"> <i class="icon fa-close"></i> Congelar OT</button>
+						</div>
+					</div>
+					<form id="frmeditarOrden">
+						<input type="hidden" id="txteditarOrden_idOt" class="guardar">
+						<input type="hidden" id="txteditarOrden_Prefijo" class="guardar">
+						<div class="col-sm-12">
+							<h1><small>Consecutivo Interno:</small><span id="lblEditarOrden_idOT"></span></h1>
+							<div class="col-sm-4">
+								<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Nombre del Proyecto</h4>
+			  						<input id="txteditarOrden_Nombre" type="text" class="form-control guardar" placeholder="Nombre" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">OT</h4>
+			  						<input id="txteditarOrden_Codigo" type="text" class="form-control guardar" placeholder="Codigo EPSA" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Codigo Radicado</h4>
+			  						<input id="txteditarOrden_RadicadoCodigo" type="text" class="form-control guardar" placeholder="codigo Radicado EPSA" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Fecha Radicado</h4>
+			  						<input id="txteditarOrden_RadicadoFecha" type="text" class="form-control guardar" placeholder="Fecha Radicado EPSA" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Hora Radicado</h4>
+			  						<input id="txteditarOrden_RadicadoHora" type="text" class="form-control guardar" placeholder="Hora Radicado EPSA" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Forma de Recibo</h4>
+			  						<select id="txteditarOrden_Recibo" class="form-control guardar" placeholder="Emisión" required>
+			  							<option value="Correo">Correo</option>
+			  							<option value="Llamada">Llamada</option>
+			  							<option value="OCEN">OCEN</option>
+			  							<option value="En Físico">En Físico</option>
+			  						</select>
+			  					</div>
+			  					<div class="col-md-12 form-group">
+			  						<h4 class="example-title">Emision</h4>
+			  						<select id="txteditarOrden_Emision" class="form-control guardar" placeholder="Emisión" required>
+			  							<option value="Provisión de Sevicio">Provisión de Sevicio</option>
+			  							<option value="OM&M">OM&M</option>
+			  							<option value="Mantenimiento">Mantenimiento</option>
+			  							<option value="Desarrollo">Desarrollo</option>
+			  						</select>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Fecha de Recepción de la Orden</h4>
+			  						<input id="txteditarOrden_fechaOcen" class="form-control guardar" placeholder="Fecha de Recepción" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Hora de Recepción de la Orden</h4>
+			  						<input id="txteditarOrden_horaOcen" class="form-control guardar" placeholder="Hora de Recepción" required>
+			  					</div>
+			  					<div class="col-md-12 form-group">
+			  						<h4 class="example-title">Alcance</h4>
+			  						<textarea id="txteditarOrden_Alcance" rows="5" class="form-control guardar" placeholder="Alcance" required></textarea>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Zona</h4>
+			  						<select id="txteditarOrden_Zona" class="form-control guardar">
+
+			  						</select>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Municipio</h4>
+			  						<select id="txteditarOrden_Municipio" class="form-control guardar"></select>
+			  					</div>
+			  					<div class="col-md-12 form-group">
+			  						<h4 class="example-title">Localidad</h4>
+			  						<input type="text" id="txteditarOrden_Localidad" class="form-control guardar">
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Prioridad</h4>
+			  						<select id="txteditarOrden_Prioridad" class="form-control guardar">
+			  							<option value="Normal">Normal</option>
+			  							<option value="Alta">Alta</option>
+			  						</select>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Tiempo Limite</h4>
+			  						<input type="number" id="txteditarOrden_Tiempo" class="form-control guardar">
+			  					</div>
+			  				</div>
+		  					<div class="col-sm-8">
+		  						<div class="cols-sm-12 row">
+				                  <div class="col-sm-8 padding-10">
+				                    <div class="col-md-12" style="height: 70vh;" id="cntReporte_Mapa"></div>
+				                    <button class="btn btn-success btn-block" id="btnReporte_DescargarKML"><i class="icon wb-download"></i> Descargar KML</button>
+				                  </div>
+				                  <div class="col-sm-4">
+				                    <div class="example" style="min-height: 40vh;max-height: 42vh; overflow-y: scroll;">
+				                      <div class="ribbon">
+				                        <span class="ribbon-inner">Datos del Punto</span>
+				                      </div>
+				                      <div id="cntReporte_Datos">
+				                      	
+				                      </div>		                      
+				                    </div>
+
+				                    <div class="example" style="min-height: 30vh;max-height: 32vh; overflow-y: scroll;">
+				                      <div class="ribbon">
+				                        <span class="ribbon-inner">Fotos</span>
+				                      </div>
+				                      <div id="cntReporte_Imagenes">
+				                      	
+				                      </div>
+				                    </div>
+				                  </div>
+				                </div>
+		  					</div>
+	  					</div>
+	  					<hr>
+	  					<h1 class="example-title col-md-12">Datos de Contacto</h1>
+	  					<div class="col-md-6 form-group">
+	  						<h4 class="example-title">Nombre</h4>
+	  						<input type="text" id="txteditarOrden_ContactoNombre" class="form-control guardar" required>
+	  					</div>
+	  					<div class="col-md-6 form-group">
+	  						<h4 class="example-title">Telefono</h4>
+	  						<input type="text" id="txteditarOrden_ContactoTelefono" class="form-control guardar" required>
+	  					</div>
+	  					<div class="col-md-12 form-group">
+	  						<h4 class="example-title">Dirección</h4>
+	  						<input type="text" id="txteditarOrden_ContactoDireccion" class="form-control guardar" required>
+	  					</div>
+
+	  					<hr>
+	  					<div class="col-md-12 margin-top-50">
+	  						<h4 class="example-title">Actividades</h4>
+	  						<input type="hidden" id="txteditarOrden_Funciones" class="guardar">
+	  						<input type="hidden" id="txteditarOrden_FuncionesNuevas" class="guardar">
+	  						<input type="hidden" id="txteditarOrden_FuncionesBorradas" class="guardar">
+	  						<input type="hidden" id="txteditarOrden_tipoProyecto" class="guardar">
+	  						
+
+	  						<div id="cnteditarOrden_btnTipoProyecto" class="row">
+			                    <div class="btn-group" aria-label="Default button group" role="group">
+			                      <button type="button" tipoProyecto="1" class="btn btn-outline btn-default">Proyecto Tipo 1</button>
+			                      <button type="button" tipoProyecto="2" class="btn btn-outline btn-default">Proyecto Tipo 2</button>
+			                      <button type="button" tipoProyecto="3" class="btn btn-outline btn-default">Proyecto Tipo 3</button>
+			                      <button type="button" tipoProyecto="4" class="btn btn-outline btn-default">Proyecto Tipo 4</button>
+			                      <button type="button" tipoProyecto="5" class="btn btn-outline btn-default">Proyecto Tipo 5</button>
+			                      <button type="button" tipoProyecto="6" class="btn btn-outline btn-default">Todas</button>
+			                      <button type="button" tipoProyecto="7" class="btn btn-outline btn-default">Ninguna</button>
+			                    </div>
+			                    <br><br>
+	  							<div class="hide cntRadeditarOrden_P" id="cntRadeditarOrden_P1">
+	  								<h4 class="example-title">Proyecto Tipo 1</h4>
+					                <div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P1_1" value="P1_1" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P1_1">Red BT nueva < 300m</label>
+					                </div>
+		  							<div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P1_2" value="P1_2" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P1_2">Cambio calibre red BT por TR</label>
+					                </div>
+	  							</div>
+	  							<div class="hide cntRadeditarOrden_P" id="cntRadeditarOrden_P2">
+	  								<h4 class="example-title">Proyecto Tipo 2</h4>
+		  							<div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P2_1" value="P2_1" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P2_1">Diseño TR tipo poste en poste existente</label>
+					                </div>
+	  							</div>
+
+	  							<div class="hide cntRadeditarOrden_P" id="cntRadeditarOrden_P3">
+	  								<h4 class="example-title">Proyecto Tipo 3</h4>
+		  							<div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P3_1" value="P3_1" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P3_1">Extensión de red aerea o subterranea MT y/o BT < 300 m con TR tipo Poste</label>
+					                </div>
+	  							</div>
+
+	  							<div class="hide cntRadeditarOrden_P" id="cntRadeditarOrden_P4">
+	  								<h4 class="example-title">Proyecto Tipo 4</h4>
+		  							<div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P4_1" value="P4_1" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P4_1">SE interior < 500 kVA con diseño SPT</label>
+					                </div>
+					                <div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P4_2" value="P4_2" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P4_2">Extensión de red aerea o subterranea MT y/o BT < 300 m con TR tipo Poste</label>
+					                </div>
+	  							</div>
+
+	  							<div class="hide cntRadeditarOrden_P" id="cntRadeditarOrden_P5">
+	  								<h4 class="example-title">Proyecto Tipo 5</h4>
+					                <div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P5_1" value="P5_1" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P5_1">Redes aereas o subterraneas MT y/o BT > 3 Km con TR tipo poste</label>
+					                </div>
+					                <div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P5_2" value="P5_2" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P5_2">SE interior > 500 kVA con SPT y extensión de red MT y/o BT</label>
+					                </div>
+		  							<div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P5_3" value="P5_3" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P5_3">Instalaciones internas < 500 m2</label>
+					                </div>
+					                <div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P5_4" value="P5_4" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P5_4">Proyecto de arquitectura de RED (IAR)</label>
+					                </div>
+					                <div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P5_5" value="P5_5" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P5_5">Proyectos del plan de calidad y estabilización de circuitos</label>
+					                </div>
+	  							</div>
+	  							<div class="hide">
+	  								<div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P6_1" value="P6_1" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P6_1">Proyectos del plan de calidad y estabilización de circuitos</label>
+					                </div>
+					                <div class="radio-custom radio-primary">
+					                  <input type="radio" id="radeditarOrden_P7_1" value="P7_1" name="radeditarOrden_TP">
+					                  <label for="radeditarOrden_P7_1">Proyectos del plan de calidad y estabilización de circuitos</label>
+					                </div>
+	  							</div>
+		                  	</div>
+	  						<div id="cnteditarOrden_Funciones" class="margin-top-20 blue-grey-600"></div>
+	  					</div> 
+	  					<div class="form-group col-md-12 font-size-20 text-right">
+	                      <button type="submit" id="btneditarOrden_Submit" class="btn btn-success margin-horizontal-50"><i class="icon fa-save"></i>Guardar</button>
+	                    </div>
+					</form>
+	  					<hr>
+	  					
+	  					<div class="col-md-12 margin-top-50">
+	  						<h4 class="example-title">Agregar Archivos</h4>
+	  						<div class="col-md-8">
+						        <h5 class="example-title">Cargar Archivo</h5>
+						        <form class="form-group" id="frmeditarOrden_Archivos" action="" method="post" enctype="multipart/form-data">
+						          <div class="input-group input-group-file">
+						            <input type="text" class="form-control inputText" readonly="">
+						            <span class="input-group-btn">
+						              <span class="btn btn-success btn-file">
+						                <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+						                Buscar
+						                <input type="file" name="archivo" class="inputControl">
+						              </span>
+						              <button type="submit" class="btn btn-success">
+						                <i class="icon wb-upload" aria-hidden="true"></i> Subir
+						              </button>
+						            </span>
+						          </div>
+						          <div class="progress progress-lg">
+						            <div id="txteditarOrden_ArchivoProgreso" class="progress-bar progress-bar-success" style="width: 0%;" role="progressbar"></div>
+						          </div>
+						        </form>
+						      </div>
+						      <div class="col-md-10">
+						      	<ul id="cnteditarOrden_Archivos" class="list-group list-group-dividered list-group-full">
+					                
+					              </ul>
+						      </div>
+	  					</div>
+
+
+	  					
+				</div>
+			</div>
+    	</div>
+	</content>
+	<fixedScripts>
+		<script src="../assets/vendor/jquery/jquery.js"></script>
+		<script src="../js/funciones.js"></script>
+		<script src="../js/plugins.js"></script>
+		<script src="../js/abriModulo.js"></script>
+	</fixedScripts>
+	<footer>
+		  <!-- Core  -->
+		  <!--<script src="../assets/vendor/jquery/jquery.js"></script>-->
+		  <script src="../assets/vendor/bootstrap/bootstrap.js"></script>
+		  <!--<script src="../assets/vendor/animsition/jquery.animsition.js"></script>-->
+		  <script src="../assets/vendor/asscroll/jquery-asScroll.js"></script>
+		  <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+		  <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+		  <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+		  <!-- Plugins -->
+		  <script src="../assets/vendor/switchery/switchery.min.js"></script>
+		  <script src="../assets/vendor/intro-js/intro.js"></script>
+		  <script src="../assets/vendor/screenfull/screenfull.js"></script>
+		  <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+
+		  <!-- Scripts -->
+		  <script src="../assets/js/core.js"></script>
+		  <script src="../assets/js/site.js"></script>
+
+		  <script src="../assets/js/sections/menu.js"></script>
+		  <script src="../assets/js/sections/menubar.js"></script>
+		  <script src="../assets/js/sections/gridmenu.js"></script>
+		  <script src="../assets/js/sections/sidebar.js"></script>
+
+		  <script src="../assets/js/configs/config-colors.js"></script>
+		  <script src="../assets/js/configs/config-tour.js"></script>
+
+		  <script src="../assets/js/components/asscrollable.js"></script>
+		  <!--<script src="../assets/js/components/animsition.js"></script>-->
+		  <script src="../assets/js/components/slidepanel.js"></script>
+		  <script src="../assets/js/components/switchery.js"></script>
+
+		  <script src="../assets/vendor/alertify-js/alertify.js"></script>
+		  <script src="../assets/js/components/alertify-js.js"></script> 
+
+		  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCqsaOPb3d9wCtzrh-7XGN4dnMy44qV5ns"></script>
+		  <script src="../assets/vendor/gmaps/gmaps.js"></script>
+		  <script src="../assets/js/components/gmaps.js"></script>
+
+		  <customscripts>
+			<script src="../assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+			<script src="../assets/js/components/jquery.form.js"></script>
+			<script src="../assets/vendor/jt-timepicker/jquery.timepicker.min.js"></script>
+		  </customscripts>
+	</footer>
+
+	<div class="modal fade modal-primary" id="cntEditarOrden_Congelar" aria-hidden="true" aria-labelledby="cntEditarOrden_Congelar" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          	<form id="frmEditarOrden_Congelar">
+	            <div class="modal-header">
+	              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                <span aria-hidden="true">×</span>
+	              </button>
+	              <h4 class="modal-title">Congelar Orden</h4>
+	            </div>
+	            <div class="modal-body">
+					<div class="form-group">
+						<h4 class="example-title">Informe</h4>
+						<input id="txtEditarOrden_Congelar_Informe" type="text" class="form-control guardar" placeholder="Informe" required>
+					</div>
+					<div class="form-group">
+						<h4 class="example-title">Quien Autorizó</h4>
+						<textarea id="txtEditarOrden_Congelar_Quien_Autorizo" class="form-control guardar" placeholder="Quien autorizó" required></textarea>
+					</div>
+	            </div>
+	            <div class="modal-footer">
+	              <button type="button" class="btn btn-default" data-dismiss="modal">No hacerlo</button>
+	              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+	            </div>
+	        </form>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

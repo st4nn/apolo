@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="bootstrap admin template">
+	<meta name="author" content="">
+
+  	<title>Calculo Regulación</title>
+
+	<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<fixedHead>
+			  <!-- Stylesheets -->
+			  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+			  <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
+			  <link rel="stylesheet" href="../assets/css/site.css">
+
+			  <!-- Plugins -->
+			  <!--<link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">-->
+			  <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+			  <link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
+			  <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
+			  <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
+			  <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
+
+			  <!-- Fonts -->
+			  <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
+			  <link rel="stylesheet" href="../assets/fonts/font-awesome/font-awesome.min.css">
+			  <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
+			  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+			  <!--[if lt IE 9]>
+			    <script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
+			    <![endif]-->
+
+			  <!--[if lt IE 10]>
+			    <script src="../assets/vendor/media-match/media.match.min.js"></script>
+			    <script src="../assets/vendor/respond/respond.min.js"></script>
+			    <![endif]-->
+
+			  <!-- Scripts -->
+			  <script src="../assets/vendor/modernizr/modernizr.js"></script>
+			  <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+
+			  <script>
+			    Breakpoints();
+			  </script>
+			  <!-- Plugins For Alertify -->
+			  <link rel="stylesheet" href="../assets/vendor/alertify-js/alertify.css">
+			  <link rel="stylesheet" href="../assets/examples/css/advanced/alertify.css"> 
+	</fixedHead>
+	<customCss>
+		<link rel="stylesheet" href="../assets/vendor/filament-tablesaw/tablesaw.css">
+	</customCss>
+</head>
+<body>
+	<header></header>
+	<sidebar></sidebar>
+	<content>
+		<div class="page">
+			<div class="panel hide">
+				<div class="panel-title">Calculo de Regulación</div>
+				<div class="panel-body">
+					<button class="btn btn-lg btn-block btn-primary"><i class="icon fa-keyboard-o"></i> Datos</button>
+					<button class="btn btn-lg btn-block btn-primary"><i class="icon fa-line-chart"></i> Calc.</button>
+					<button class="btn btn-lg btn-block btn-primary"><i class="icon fa-paint-brush"></i> Registro</button>
+				</div>
+			</div>
+			<div class="panel hide">
+				<div class="panel-title">
+					<p>Calculo de Regulación</p> Ingreso de Datos
+				</div>
+				<div class="panel-body">
+					<form>
+						<div class="col-md-12 form-group">
+	  						<h4 class="example-title">CAP (kVA)</h4>
+	  						<input type="number" id="txtCR_Cap" class="form-control guardar" placeholder="CAP (kVA)" required>
+	  					</div>
+	  					<div class="col-md-12 form-group">
+	  						<h4 class="example-title">Fases Pri.</h4>
+	  						<input type="number" id="txtCR_Fases" class="form-control guardar" placeholder="Fases Pri." required>
+	  					</div>
+						<button type="submit" class="btn btn-success btn-lg btn-block"><i class="icon fa-floppy-o"></i> Guardar</button>						
+					</form>
+				</div>
+			</div>
+			<div class="panel hide">
+				<div class="panel-title"><p>Calculo de Regulación</p></div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="panel panel-bordered col-xs-4">
+				            <div class="panel-heading">
+				              <h3 class="panel-title">Usuarios</h3>
+				            </div>
+				            <div class="panel-body">
+				              <small>Cant:</small>
+				              <h4>8</h4>
+				              <small>Demanda:</small>
+				              <h4>8</h4>
+				            </div>
+				        </div>
+				        <div class="panel panel-bordered col-xs-4">
+				            <div class="panel-heading">
+				              <h3 class="panel-title">AP</h3>
+				            </div>
+				            <div class="panel-body">
+				              <small>Cant:</small>
+				              <h4>8</h4>
+				              <small>kW:</small>
+				              <h4>8</h4>
+				            </div>
+				        </div>
+				         <div class="panel panel-bordered col-xs-4">
+				            <div class="panel-heading">
+				              <h3 class="panel-title">Pérdidas</h3>
+				            </div>
+				            <div class="panel-body">
+				              <small>kW:</small>
+				              <h4>8</h4>
+				              <small>%:</small>
+				              <h4>8</h4>
+				            </div>
+				        </div>
+			        </div>
+			        <div class="row text-align-center">
+			        	<div class="col-xs-6">
+					        <div class="panel panel-bordered margin-5">
+					            <div class="panel-heading">
+					              <h3 class="panel-title">Demanda Total (kVA)</h3>
+					            </div>
+					            <div class="panel-body">
+					            	<h1>88</h1>
+					            </div>
+					        </div>
+			        	</div>
+			        	<div class="col-xs-6">
+					        <div class="panel panel-bordered margin-5">
+					            <div class="panel-heading">
+					              <h3 class="panel-title">CARGAB. (%)<br></h3>
+					            </div>
+					            <div class="panel-body">
+					            	<h1>13</h1>
+					            </div>
+					        </div>			        		
+			        	</div>
+			        </div>
+				</div>
+			</div>
+			<div class="panel panel-bordered">
+				<div class="panel-heading">
+					<h3 class="panel-title">CalculoRegulacion</h3>
+				</div>
+				<div class="panel-body">
+					<table id="tblCR_Resultados" class="tablesaw table-hover table-bordered" data-tablesaw-mode="swipe" data-tablesaw-minimap>
+		                <thead>
+		                  <tr>
+		                  	<th colspan="2" data-tablesaw-priority="persist">Tramo</th>
+		                  	<th colspan="2" data-tablesaw-priority="persist">Regulación</th>
+							<th rowspan="2">Lon</th>
+							<th rowspan="2">Calibre (AWG)</th>
+		                  	<th rowspan="2">Num Usuarios</th>
+		                  	<th rowspan="2">Num AP (kW)</th>
+		                  </tr>
+		                  <tr>
+		                    <th data-tablesaw-priority="persist">I</th>
+		                    <th data-tablesaw-priority="persist">F</th>
+		                    <th data-tablesaw-priority="persist">Parc</th>
+		                    <th data-tablesaw-priority="persist">Acum</th>
+		                  </tr>
+		                </thead>
+		                <tbody>
+		                  	<tr>
+		                  		<td>0</td>
+		                  		<td>1</td>
+		                  		<td></td>
+		                  		<td></td>
+		                  		<td>2</td>
+		                  		<td>3</td>
+		                  		<td>4</td>
+		                  		<td>0</td>
+		                  	</tr>
+		                  	<tr>
+		                  		<td>1</td>
+		                  		<td>2</td>
+		                  		<td></td>
+		                  		<td></td>
+		                  		<td>2</td>
+		                  		<td>3</td>
+		                  		<td>3</td>
+		                  		<td>0</td>
+		                  	</tr>
+		                  	<tr>
+		                  		<td>2</td>
+		                  		<td>3</td>
+		                  		<td></td>
+		                  		<td></td>
+		                  		<td>2</td>
+		                  		<td>3</td>
+		                  		<td>2</td>
+		                  		<td>0</td>
+		                  	</tr>
+		                  	<tr>
+		                  		<td>3</td>
+		                  		<td>4</td>
+		                  		<td></td>
+		                  		<td></td>
+		                  		<td>2</td>
+		                  		<td>3</td>
+		                  		<td>1</td>
+		                  		<td>0</td>
+		                  	</tr>
+		                </tbody>
+		              </table>
+				</div>
+				<div class="panel-footer">
+					<form id="frmCR_AgregarItem">
+						<h3 class="example-title">Tramo</h3>
+						<ul class="blocks-2">
+							<li>
+								<div class="form-group">
+									<label class="control-label" for="xx"> Inicial:</label>
+									<input id="txtCR_TramoIni" class="form-control" type="number" required>
+								</div>
+							</li>
+							<li>
+								<div class="form-group">
+									<label class="control-label" for="xx"> Final:</label>
+									<input id="txtCR_TramoFin" class="form-control" type="number" required>
+								</div>
+							</li>						
+						</ul>
+						<ul class="blocks-2">
+							<li>
+								<div class="form-group">
+									<label class="control-label" for="xx"> Longitud (Mts):</label>
+									<input id="txtCR_Longitud" class="form-control" type="number">
+								</div>
+							</li>
+							<li>
+								<div class="form-group">
+									<label class="control-label" for="xx"> Calibre:</label>
+									<select id="txtCR_Calibre" class="form-control" required>
+										<option value=""></option>
+										<option value="TZ 2">TZ 2</option>
+										<option value="TZ 1/0">TZ 1/0</option>
+										<option value="TZ 4/0">TZ 4/0</option>
+										<option value="TZ 1/0 4H">TZ 1/0 4H</option>
+										<option value="TZ 4/0 4H">TZ 4/0 4H</option>
+										<option value="TZ 336 4H">TZ 336 4H</option>
+										<option value="CU 8">CU 8</option>
+										<option value="CU 6">CU 6</option>
+										<option value="CU 4">CU 4</option>
+										<option value="CU 2">CU 2</option>
+										<option value="CU 2/0">CU 2/0</option>
+										<option value="CU 3/0">CU 3/0</option>
+										<option value="CU 4/0">CU 4/0</option>
+										<option value="ACSR 4">ACSR 4</option>
+										<option value="ACSR 2">ACSR 2</option>
+										<option value="ACSR 1/0">ACSR 1/0</option>
+										<option value="ACSR 2/0">ACSR 2/0</option>
+										<option value="ACSR 3/0">ACSR 3/0</option>
+										<option value="ACSR 4/0">ACSR 4/0</option>
+										<option value="CONC 2 #8 120V">CONC 2 #8 120V</option>
+										<option value="CONC 2 #8 240V">CONC 2 #8 240V</option>
+										<option value="CONC 3 #8 240V">CONC 3 #8 240V</option>
+										<option value="CONC 2 #6 120V">CONC 2 #6 120V</option>
+										<option value="CONC 2 #6 240V">CONC 2 #6 240V</option>
+										<option value="CONC 3 #6 240V">CONC 3 #6 240V</option>
+										<option value="CONC 3 #4 240V">CONC 3 #4 240V</option>
+									</select>
+								</div>
+							</li>						
+						</ul>
+						<ul class="blocks-2">
+							<li>
+								<div class="form-group">
+									<label class="control-label" for="xx"> Num Usuarios:</label>
+									<input id="txtCR_UsuariosNum" class="form-control" type="number" required>
+								</div>
+							</li>
+							<li>
+								<div class="form-group">
+									<label class="control-label" for="xx"> Num AP(kW):</label>
+									<input id="txtCR_APNum" class="form-control" type="number" required>
+								</div>
+							</li>
+						</ul>
+						<button id="btnCR_Agregar" type="submit" class="btn btn-success btn-lg btn-block"><i class="icon wb-upload"></i> Agregar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</content>
+	<fixedScripts>
+		<script src="../assets/vendor/jquery/jquery.js"></script>
+		<script src="../js/funciones.js"></script>
+		<script src="../js/plugins.js"></script>
+		<script src="../js/abriModulo.js"></script>
+	</fixedScripts>
+	<footer>
+		  <!-- Core  -->
+		  <!--<script src="../assets/vendor/jquery/jquery.js"></script>-->
+		  <script src="../assets/vendor/bootstrap/bootstrap.js"></script>
+		  <!--<script src="../assets/vendor/animsition/jquery.animsition.js"></script>-->
+		  <script src="../assets/vendor/asscroll/jquery-asScroll.js"></script>
+		  <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+		  <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+		  <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+		  <!-- Plugins -->
+		  <script src="../assets/vendor/switchery/switchery.min.js"></script>
+		  <script src="../assets/vendor/intro-js/intro.js"></script>
+		  <script src="../assets/vendor/screenfull/screenfull.js"></script>
+		  <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+
+		  <!-- Scripts -->
+		  <script src="../assets/js/core.js"></script>
+		  <script src="../assets/js/site.js"></script>
+
+		  <script src="../assets/js/sections/menu.js"></script>
+		  <script src="../assets/js/sections/menubar.js"></script>
+		  <script src="../assets/js/sections/gridmenu.js"></script>
+		  <script src="../assets/js/sections/sidebar.js"></script>
+
+		  <script src="../assets/js/configs/config-colors.js"></script>
+		  <script src="../assets/js/configs/config-tour.js"></script>
+
+		  <script src="../assets/js/components/asscrollable.js"></script>
+		  <!--<script src="../assets/js/components/animsition.js"></script>-->
+		  <script src="../assets/js/components/slidepanel.js"></script>
+		  <script src="../assets/js/components/switchery.js"></script>
+
+		  <script src="../assets/vendor/alertify-js/alertify.js"></script>
+		  <script src="../assets/js/components/alertify-js.js"></script> 
+
+		<customscripts>
+			<script src="../assets/vendor/filament-tablesaw/tablesaw.js"></script>
+		</customscripts>
+	</footer>
+</body>
+</html>

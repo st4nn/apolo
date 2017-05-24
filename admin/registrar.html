@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="bootstrap admin template">
+  <meta name="author" content="">
+
+  <title>Registrar |</title>
+
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
+  <link rel="stylesheet" href="../assets/css/site.min.css">
+
+  <!-- Plugins -->
+  <link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">
+  <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+  <link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
+  <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
+  <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
+  <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
+
+  <!-- Plugins For Alertify -->
+  <link rel="stylesheet" href="../assets/vendor/alertify-js/alertify.css">
+  <link rel="stylesheet" href="../assets/examples/css/advanced/alertify.css">
+
+  <!-- Page -->
+  <link rel="stylesheet" href="../assets/examples/css/pages/register.css">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
+  <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+  <!--[if lt IE 9]>
+    <script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 10]>
+    <script src="../assets/vendor/media-match/media.match.min.js"></script>
+    <script src="../assets/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Scripts -->
+  <script src="../assets/vendor/modernizr/modernizr.js"></script>
+  <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+  <script>
+    Breakpoints();
+  </script>
+</head>
+<body class="page-register layout-full page-dark">
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+  <!-- Page -->
+  <div class="page animsition vertical-align text-center" data-animsition-in="fade-in"
+  data-animsition-out="fade-out">
+    <div class="page-content vertical-align-middle width-full">
+      <div class="brand">
+        <img class="brand-img" src="../assets/images/logo100.png" alt="...">
+        <h2 class="brand-text">Sistema de Información de Mercadeo</h2>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="panel col-md-8">
+        <div class="panel-heading">
+          <h3 class="panel-title"><p>Registrese para acceder a la Plataforma</p></h3>
+        </div>
+        <div class="panel-body container-fluid">
+          <form method="post" id="frmRegistrar" role="form" class="width-full text-left">
+    				<div class="row row-sm width-full">
+      				<div id="cntRegistrar_Panel1" class="col-md-6">
+      					<div class="col-md-12 form-group">
+      						<h4 class="example-title">Nombres y Apellidos</h4>
+      						<input id="txtRegistrar_nombre" type="text" class="form-control guardar" placeholder="Nombre" required>
+      					</div>
+      					<div class="col-md-6 form-group">
+      						<h4 class="example-title">Empresa</h4>
+      						<select id="txtRegistrar_empresa" class="form-control guardar" placeholder="Empresa" id="txtRegistrar_Empresa" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+      					</div>
+                <div class="col-md-6 form-group">
+                  <h4 class="example-title">Cargo</h4>
+                  <input id="txtRegistrar_cargo" type="text" class="form-control guardar" placeholder="Cargo" required>
+                </div>
+      					<div class="col-md-6 form-group">
+      						<h4 class="example-title">Sede</h4>
+      						<select id="txtRegistrar_sede" class="form-control guardar" placeholder="Sede" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+      					</div>
+      					<div class="col-md-6 form-group">
+      						<h4 class="example-title">Área</h4>
+      						<select id="txtRegistrar_area" class="form-control guardar" placeholder="Área" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+      					</div>
+      					<div class="col-md-12 form-group">
+      						<h5 class="example-title">Correo</h5>
+                  <div class="input-group">
+        						<input id="txtRegistrar_correo" type="text" class="form-control guardar" placeholder="e-mail" required>
+                    <span class="input-group-addon">@wspgroup.com</span>
+                  </div>
+      					</div>
+              </div>
+              <div class="col-md-6">
+                <div class="col-md-12 form-group">
+                  <h4 class="example-title">Usuario</h4>
+                  <input id="txtRegistrar_usuario" type="text" class="form-control guardar" placeholder="Usuario" required>
+                </div>
+                <div class="col-md-12 form-group">
+                  <h4 class="example-title">Contraseña</h4>
+                  <input id="txtRegistrar_clave" type="password" class="form-control guardar" placeholder="Contraseña" required>
+                </div>
+                <div class="col-md-12 form-group">
+                  <h5 class="example-title">Confirmar contraseña</h5>
+                  <input id="txtRegistrar_clave2" type="password" class="form-control guardar" placeholder="Confirmar Contraseña" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <h4 class="example-title">Perfil</h4>
+                  <select name="" id="txtRegistrar_perfil" class="form-control guardar input-l" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                <div class="col-md-6 form-group">
+                  <h5 class="example-title">Lista de Correo</h5>
+                  <select name="" id="txtRegistrar_ListaCorreo"  class="form-control guardar input-l">
+                      <option value="NO">NO</option>
+                      <option value="SI">SI</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="page-copyright page-copyright-inverse">
+			<!--
+      <p>Sistema de Información de Mercadeo | SIM </p>
+      <p>© 2016. Todos los derechos reservados.</p>
+      -->
+    </footer>
+  </div>
+  <!-- End Page -->
+
+
+  <!-- Core  -->
+  <script src="../assets/vendor/jquery/jquery.js"></script>
+  <script src="../assets/vendor/bootstrap/bootstrap.js"></script>
+  <script src="../assets/vendor/animsition/jquery.animsition.js"></script>
+  <script src="../assets/vendor/asscroll/jquery-asScroll.js"></script>
+  <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+  <script src="../assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+  <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+  <!-- Plugins -->
+  <script src="../assets/vendor/switchery/switchery.min.js"></script>
+  <script src="../assets/vendor/intro-js/intro.js"></script>
+  <script src="../assets/vendor/screenfull/screenfull.js"></script>
+  <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+
+  <!-- Plugins For This Page -->
+  <script src="../assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+  <!-- Scripts -->
+  <script src="../assets/js/core.js"></script>
+  <script src="../assets/js/site.js"></script>
+
+  <script src="../assets/js/sections/menu.js"></script>
+  <script src="../assets/js/sections/menubar.js"></script>
+  <script src="../assets/js/sections/gridmenu.js"></script>
+  <script src="../assets/js/sections/sidebar.js"></script>
+
+  <script src="../assets/js/configs/config-colors.js"></script>
+  <script src="../assets/js/configs/config-tour.js"></script>
+
+  <script src="../assets/js/components/asscrollable.js"></script>
+  <script src="../assets/js/components/animsition.js"></script>
+  <script src="../assets/js/components/slidepanel.js"></script>
+  <script src="../assets/js/components/switchery.js"></script>
+
+  <!-- Scripts For Alertify-->
+  <script src="../assets/vendor/alertify-js/alertify.js"></script>
+  <script src="../assets/js/components/alertify-js.js"></script>
+
+  <!-- Scripts For This Page -->
+  <script src="../assets/js/components/jquery-placeholder.js"></script>
+  <script src="../assets/js/components/animate-list.js"></script>
+
+  <script src="../js/funciones.js"></script>
+  <script src="../js/registrar.js"></script>
+
+  <script>
+    (function(document, window, $) {
+      'use strict';
+
+      var Site = window.Site;
+      $(document).ready(function() {
+        Site.run();
+      });
+    })(document, window, jQuery);
+  </script>
+
+
+</body>
+
+</html>
