@@ -62,239 +62,282 @@
 	<sidebar></sidebar>
 	<content>
 		<div class="page">
-    		<div class="panel">
-				<div class="panel-body container-fluid">
+				<div class="page-content container-fluid">
 					<form id="frmCrearOrden">
 						<input type="hidden" id="txtCrearOrden_Prefijo" class="guardar">
-						<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Nombre de Proyecto</h4>
-	  						<input id="txtCrearOrden_Nombre" type="text" class="form-control guardar" placeholder="Nombre" required>
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">OT</h4>
-	  						<input id="txtCrearOrden_Codigo" type="text" class="form-control guardar" placeholder="codigo EPSA" >
-	  					</div>
-	  					<div class="col-md-4 form-group">
-	  						<h4 class="example-title">Codigo Radicado</h4>
-	  						<input id="txtCrearOrden_RadicadoCodigo" type="text" class="form-control guardar" placeholder="codigo Radicado EPSA">
-	  					</div>
-	  					<div class="col-md-4 form-group">
-	  						<h4 class="example-title">Fecha Radicado</h4>
-	  						<input id="txtCrearOrden_RadicadoFecha" type="text" class="form-control guardar" placeholder="Fecha Radicado EPSA" required>
-	  					</div>
-	  					<div class="col-md-4 form-group">
-	  						<h4 class="example-title">Hora Radicado</h4>
-	  						<input id="txtCrearOrden_RadicadoHora" type="text" class="form-control guardar" placeholder="Hora Radicado EPSA" required>
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Forma de Recibo</h4>
-	  						<select id="txtCrearOrden_Recibo" class="form-control guardar" placeholder="Emisión" required>
-	  							<option value="Correo">Correo</option>
-	  							<option value="Llamada">Llamada</option>
-	  							<option value="OCEN">OCEN</option>
-	  							<option value="En Físico">En Físico</option>
-	  						</select>
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Emision</h4>
-	  						<select id="txtCrearOrden_Emision" class="form-control guardar" placeholder="Emisión" required>
-	  							<option value="Provisión de Sevicio">Provisión de Sevicio</option>
-	  							<option value="OM&M">OM&M</option>
-	  							<option value="Mantenimiento">Mantenimiento</option>
-	  							<option value="Desarrollo">Desarrollo</option>
-	  						</select>
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Fecha de Recepción de la Orden</h4>
-	  						<input id="txtCrearOrden_fechaOcen" class="form-control guardar" placeholder="Fecha de Recepción" required>
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Hora de Recepción de la Orden</h4>
-	  						<input id="txtCrearOrden_horaOcen" class="form-control guardar" placeholder="Hora de Recepción" required>
-	  					</div>
-	  					<div class="col-md-12 form-group">
-	  						<h4 class="example-title">Alcance</h4>
-	  						<textarea id="txtCrearOrden_Alcance" rows="5" class="form-control guardar" placeholder="Alcance" required></textarea>
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Zona</h4>
-	  						<select id="txtCrearOrden_Zona" class="form-control guardar">
 
-	  						</select>
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Municipio</h4>
-	  						<select id="txtCrearOrden_Municipio" class="form-control guardar"></select>
-	  					</div>
-	  					<div class="col-md-8 form-group">
-	  						<h4 class="example-title">Localidad</h4>
-	  						<input type="text" id="txtCrearOrden_Localidad" class="form-control guardar">
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Prioridad</h4>
-	  						<select id="txtCrearOrden_Prioridad" class="form-control guardar">
-	  							<option value="Normal">Normal</option>
-	  							<option value="Alta">Alta</option>
-	  						</select>
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Tiempo Limite</h4>
-	  						<input type="number" id="txtCrearOrden_Tiempo" class="form-control guardar">
-	  					</div>
-	  					<hr>
-	  					<h1 class="example-title col-md-12">Datos de Contacto</h1>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Nombre</h4>
-	  						<input type="text" id="txtCrearOrden_ContactoNombre" class="form-control guardar">
-	  					</div>
-	  					<div class="col-md-6 form-group">
-	  						<h4 class="example-title">Telefono</h4>
-	  						<input type="text" id="txtCrearOrden_ContactoTelefono" class="form-control guardar">
-	  					</div>
-	  					<div class="col-md-12 form-group">
-	  						<h4 class="example-title">Dirección</h4>
-	  						<input type="text" id="txtCrearOrden_ContactoDireccion" class="form-control guardar">
-	  					</div>
+						<div class="panel">
+							<div class="panel-body">
+								<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Nombre de Proyecto</h4>
+			  						<input id="txtCrearOrden_Nombre" type="text" class="form-control guardar" placeholder="Nombre" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">OT</h4>
+			  						<input id="txtCrearOrden_Codigo" type="text" class="form-control guardar" placeholder="codigo EPSA" >
+			  					</div>
+			  					<div class="col-md-4 form-group">
+			  						<h4 class="example-title">Codigo Radicado</h4>
+			  						<input id="txtCrearOrden_RadicadoCodigo" type="text" class="form-control guardar" placeholder="codigo Radicado EPSA">
+			  					</div>
+			  					<div class="col-md-4 form-group">
+			  						<h4 class="example-title">Fecha Radicado</h4>
+			  						<input id="txtCrearOrden_RadicadoFecha" type="text" class="form-control guardar" placeholder="Fecha Radicado EPSA" required>
+			  					</div>
+			  					<div class="col-md-4 form-group">
+			  						<h4 class="example-title">Hora Radicado</h4>
+			  						<input id="txtCrearOrden_RadicadoHora" type="text" class="form-control guardar" placeholder="Hora Radicado EPSA" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Forma de Recibo</h4>
+			  						<select id="txtCrearOrden_Recibo" class="form-control guardar" placeholder="Emisión" required>
+			  							<option value="Correo">Correo</option>
+			  							<option value="Llamada">Llamada</option>
+			  							<option value="OCEN">OCEN</option>
+			  							<option value="En Físico">En Físico</option>
+			  						</select>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Emision</h4>
+			  						<select id="txtCrearOrden_Emision" class="form-control guardar" placeholder="Emisión" required>
+			  							<option value="Provisión de Sevicio">Provisión de Sevicio</option>
+			  							<option value="OM&M">OM&M</option>
+			  							<option value="Mantenimiento">Mantenimiento</option>
+			  							<option value="Desarrollo">Desarrollo</option>
+			  						</select>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Fecha de Recepción de la Orden</h4>
+			  						<input id="txtCrearOrden_fechaOcen" class="form-control guardar" placeholder="Fecha de Recepción" required>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Hora de Recepción de la Orden</h4>
+			  						<input id="txtCrearOrden_horaOcen" class="form-control guardar" placeholder="Hora de Recepción" required>
+			  					</div>
+			  				</div>
+			  			</div>
 
-	  					<hr>
-						
-						<br><div class="col-md-6 form-group">
-	  						<h4 class="example-title">Requiere Levantamiento</h4>
-	  						<select id="txtCrearOrden_requiereLevantamiento" class="form-control guardar" placeholder="Requiere Levantamiento" required>
-	  							<option value="1">Si</option>
-	  							<option value="0">No</option>
-	  						</select>
-	  					</div><br>
-						
-	  					<hr>
-	  					<div class="col-md-12 margin-top-50">
-	  						<h4 class="example-title">Actividades</h4>
-	  						<input type="hidden" id="txtCrearOrden_Funciones" class="guardar">
-	  						<input type="hidden" id="txtCrearOrden_tipoProyecto" class="guardar">
-	  						
+			  			<div class="panel">
+			  				<div class="panel-body">
+			  					<div class="col-md-12 form-group">
+			  						<h4 class="example-title">Alcance</h4>
+			  						<textarea id="txtCrearOrden_Alcance" rows="5" class="form-control guardar" placeholder="Alcance" required></textarea>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Zona</h4>
+			  						<select id="txtCrearOrden_Zona" class="form-control guardar">
 
-	  						<div id="cntCrearOrden_btnTipoProyecto" class="row">
-			                    <div class="btn-group" aria-label="Default button group" role="group">
-			                      <button type="button" tipoProyecto="1" class="btn btn-outline btn-default">Proyecto Tipo 1</button>
-			                      <button type="button" tipoProyecto="2" class="btn btn-outline btn-default">Proyecto Tipo 2</button>
-			                      <button type="button" tipoProyecto="3" class="btn btn-outline btn-default">Proyecto Tipo 3</button>
-			                      <button type="button" tipoProyecto="4" class="btn btn-outline btn-default">Proyecto Tipo 4</button>
-			                      <button type="button" tipoProyecto="5" class="btn btn-outline btn-default">Proyecto Tipo 5</button>
-			                      <button type="button" tipoProyecto="6" class="btn btn-outline btn-default">Todas</button>
-			                      <button type="button" tipoProyecto="7" class="btn btn-outline btn-default">Ninguna</button>
-			                    </div>
-			                    <br><br>
-	  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P1">
-	  								<h4 class="example-title">Proyecto Tipo 1</h4>
-					                <div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P1_1" value="P1_1" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P1_1">Red BT nueva < 300m</label>
-					                </div>
-		  							<div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P1_2" value="P1_2" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P1_2">Cambio calibre red BT por TR</label>
-					                </div>
-	  							</div>
-	  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P2">
-	  								<h4 class="example-title">Proyecto Tipo 2</h4>
-		  							<div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P2_1" value="P2_1" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P2_1">Diseño TR tipo poste en poste existente</label>
-					                </div>
-	  							</div>
+			  						</select>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Municipio</h4>
+			  						<select id="txtCrearOrden_Municipio" class="form-control guardar"></select>
+			  					</div>
+			  					<div class="col-md-8 form-group">
+			  						<h4 class="example-title">Localidad</h4>
+			  						<input type="text" id="txtCrearOrden_Localidad" class="form-control guardar">
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Prioridad</h4>
+			  						<select id="txtCrearOrden_Prioridad" class="form-control guardar">
+			  							<option value="Normal">Normal</option>
+			  							<option value="Alta">Alta</option>
+			  						</select>
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Tiempo Limite</h4>
+			  						<input type="number" id="txtCrearOrden_Tiempo" class="form-control guardar">
+			  					</div>
+			  				</div>
+						</div>
 
-	  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P3">
-	  								<h4 class="example-title">Proyecto Tipo 3</h4>
-		  							<div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P3_1" value="P3_1" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P3_1">Extensión de red aerea o subterranea MT y/o BT < 300 m con TR tipo Poste</label>
-					                </div>
-	  							</div>
+						<div class="panel">
+							<div class="panel-body">
+			  					<h1 class="example-title col-md-12">Datos de Contacto</h1>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Nombre</h4>
+			  						<input type="text" id="txtCrearOrden_ContactoNombre" class="form-control guardar">
+			  					</div>
+			  					<div class="col-md-6 form-group">
+			  						<h4 class="example-title">Telefono</h4>
+			  						<input type="text" id="txtCrearOrden_ContactoTelefono" class="form-control guardar">
+			  					</div>
+			  					<div class="col-md-12 form-group">
+			  						<h4 class="example-title">Dirección</h4>
+			  						<input type="text" id="txtCrearOrden_ContactoDireccion" class="form-control guardar">
+			  					</div>
+			  				</div>
+			  			</div>
 
-	  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P4">
-	  								<h4 class="example-title">Proyecto Tipo 4</h4>
-		  							<div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P4_1" value="P4_1" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P4_1">SE interior < 500 kVA con diseño SPT</label>
-					                </div>
-					                <div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P4_2" value="P4_2" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P4_2">Extensión de red aerea o subterranea MT y/o BT < 300 m con TR tipo Poste</label>
-					                </div>
-	  							</div>
+						<div class="panel">
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-8 text-right">
+				  						<h4 class="example-title">Requiere Levantamiento</h4>
+				  					</div>
+				  					<div class="col-sm-4">
+				  						<select id="txtCrearOrden_requiereLevantamiento" class="form-control guardar" placeholder="Requiere Levantamiento" required>
+				  							<option value="1">Si</option>
+				  							<option value="0">No</option>
+				  						</select>
+				  					</div>
+								</div>
+			  				</div>
+			  			</div>
 
-	  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P5">
-	  								<h4 class="example-title">Proyecto Tipo 5</h4>
-					                <div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P5_1" value="P5_1" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P5_1">Redes aereas o subterraneas MT y/o BT > 3 Km con TR tipo poste</label>
-					                </div>
-					                <div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P5_2" value="P5_2" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P5_2">SE interior > 500 kVA con SPT y extensión de red MT y/o BT</label>
-					                </div>
-		  							<div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P5_3" value="P5_3" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P5_3">Instalaciones internas < 500 m2</label>
-					                </div>
-					                <div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P5_4" value="P5_4" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P5_4">Proyecto de arquitectura de RED (IAR)</label>
-					                </div>
-					                <div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P5_5" value="P5_5" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P5_5">Proyectos del plan de calidad y estabilización de circuitos</label>
-					                </div>
-	  							</div>
-	  							<div class="hide">
-	  								<div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P6_1" value="P6_1" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P6_1">Proyectos del plan de calidad y estabilización de circuitos</label>
-					                </div>
-					                <div class="radio-custom radio-primary">
-					                  <input type="radio" id="radCrearOrden_P7_1" value="P7_1" name="radCrearOrden_TP">
-					                  <label for="radCrearOrden_P7_1">Proyectos del plan de calidad y estabilización de circuitos</label>
-					                </div>
-	  							</div>
-		                  	</div>
-	  						<div id="cntCrearOrden_Funciones" class="margin-top-20 blue-grey-600"></div>
+	  					<div class="panel">
+	  						<div class="panel-body">	  						
+			  					<div class="col-md-12 margin-top-50">
+			  						<h4 class="example-title">Actividades</h4>
+			  						<input type="hidden" id="txtCrearOrden_Funciones" class="guardar">
+			  						<input type="hidden" id="txtCrearOrden_tipoProyecto" class="guardar">
+			  						
+
+			  						<div id="cntCrearOrden_btnTipoProyecto" class="row">
+					                    <div class="btn-group" aria-label="Default button group" role="group">
+					                      <button type="button" tipoProyecto="1" class="btn btn-outline btn-default">Proyecto Tipo 1</button>
+					                      <button type="button" tipoProyecto="2" class="btn btn-outline btn-default">Proyecto Tipo 2</button>
+					                      <button type="button" tipoProyecto="3" class="btn btn-outline btn-default">Proyecto Tipo 3</button>
+					                      <button type="button" tipoProyecto="4" class="btn btn-outline btn-default">Proyecto Tipo 4</button>
+					                      <button type="button" tipoProyecto="5" class="btn btn-outline btn-default">Proyecto Tipo 5</button>
+					                      <button type="button" tipoProyecto="6" class="btn btn-outline btn-default">Todas</button>
+					                      <button type="button" tipoProyecto="7" class="btn btn-outline btn-default">Ninguna</button>
+					                    </div>
+					                    <br><br>
+			  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P1">
+			  								<h4 class="example-title">Proyecto Tipo 1</h4>
+							                <div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P1_1" value="P1_1" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P1_1">Red BT nueva < 300m</label>
+							                </div>
+				  							<div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P1_2" value="P1_2" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P1_2">Cambio calibre red BT por TR</label>
+							                </div>
+			  							</div>
+			  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P2">
+			  								<h4 class="example-title">Proyecto Tipo 2</h4>
+				  							<div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P2_1" value="P2_1" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P2_1">Diseño TR tipo poste en poste existente</label>
+							                </div>
+			  							</div>
+
+			  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P3">
+			  								<h4 class="example-title">Proyecto Tipo 3</h4>
+				  							<div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P3_1" value="P3_1" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P3_1">Extensión de red aerea o subterranea MT y/o BT < 300 m con TR tipo Poste</label>
+							                </div>
+			  							</div>
+
+			  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P4">
+			  								<h4 class="example-title">Proyecto Tipo 4</h4>
+				  							<div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P4_1" value="P4_1" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P4_1">SE interior < 500 kVA con diseño SPT</label>
+							                </div>
+							                <div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P4_2" value="P4_2" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P4_2">Extensión de red aerea o subterranea MT y/o BT < 300 m con TR tipo Poste</label>
+							                </div>
+			  							</div>
+
+			  							<div class="hide cntRadCrearOrden_P" id="cntRadCrearOrden_P5">
+			  								<h4 class="example-title">Proyecto Tipo 5</h4>
+							                <div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P5_1" value="P5_1" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P5_1">Redes aereas o subterraneas MT y/o BT > 3 Km con TR tipo poste</label>
+							                </div>
+							                <div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P5_2" value="P5_2" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P5_2">SE interior > 500 kVA con SPT y extensión de red MT y/o BT</label>
+							                </div>
+				  							<div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P5_3" value="P5_3" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P5_3">Instalaciones internas < 500 m2</label>
+							                </div>
+							                <div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P5_4" value="P5_4" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P5_4">Proyecto de arquitectura de RED (IAR)</label>
+							                </div>
+							                <div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P5_5" value="P5_5" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P5_5">Proyectos del plan de calidad y estabilización de circuitos</label>
+							                </div>
+			  							</div>
+			  							<div class="hide">
+			  								<div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P6_1" value="P6_1" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P6_1">Proyectos del plan de calidad y estabilización de circuitos</label>
+							                </div>
+							                <div class="radio-custom radio-primary">
+							                  <input type="radio" id="radCrearOrden_P7_1" value="P7_1" name="radCrearOrden_TP">
+							                  <label for="radCrearOrden_P7_1">Proyectos del plan de calidad y estabilización de circuitos</label>
+							                </div>
+			  							</div>
+				                  	</div>
+			  						<div id="cntCrearOrden_Funciones" class="margin-top-20 blue-grey-600"></div>
+			  					</div>
+			  				</div>
 	  					</div> 
-	  					<div class="form-group col-md-12 font-size-20 text-right">
-	                      <button type="submit" id="btnCrearOrden_Submit" class="btn btn-success margin-horizontal-50"><i class="icon fa-save"></i>Guardar</button>
-	                      <button type="button" id="btnCrearOrden_Nuevo" class="btn btn-danger margin-horizontal-50"><i class="icon fa-trash"></i>Nuevo</button>
-	                    </div>
-					</form>
-	  					<hr>
-	  					
-	  					<div class="col-md-12 margin-top-50">
-	  						<h4 class="example-title">Agregar Archivos</h4>
-	  						<div class="col-md-8">
-						        <h5 class="example-title">Cargar Archivo</h5>
-						        <form class="form-group" id="frmCrearOrden_Archivos" action="" method="post" enctype="multipart/form-data">
-						          <div class="input-group input-group-file">
-						            <input type="text" class="form-control inputText" readonly="">
-						            <span class="input-group-btn">
-						              <span class="btn btn-success btn-file">
-						                <i class="icon wb-more-horizontal" aria-hidden="true"></i>
-						                Buscar
-						                <input type="file" name="archivo" class="inputControl">
-						              </span>
-						              <button type="submit" class="btn btn-success">
-						                <i class="icon wb-upload" aria-hidden="true"></i> Subir
-						              </button>
-						            </span>
-						          </div>
-						          <div class="progress progress-lg">
-						            <div id="txtCrearOrden_ArchivoProgreso" class="progress-bar progress-bar-success" style="width: 0%;" role="progressbar"></div>
-						          </div>
-						        </form>
-						      </div>
-						      <div class="col-md-10">
-						      	<ul id="cntCrearOrden_Archivos" class="list-group list-group-dividered list-group-full">
-					                
-					              </ul>
-						      </div>
+
+	  					<div class="panel">
+	  						<div class="panel-body">
+			  					<div class="form-group col-md-12 font-size-20">
+			  						<div class="col-sm-6">
+			  							<div class="margin-5">
+						                    <button type="submit" id="btnCrearOrden_Submit" class="btn btn-success btn-block"><i class="icon fa-save"></i>Guardar</button>
+			  							</div>
+			  						</div>
+			  						<div class="col-sm-6">
+			  							<div class="margin-5">
+			                      			<button type="button" id="btnCrearOrden_Nuevo" class="btn btn-danger btn-block"><i class="icon fa-trash"></i>Nuevo</button>
+			  							</div>
+			  						</div>
+			                    </div>
+	  						</div>	
 	  					</div>
+					</form>
+
+  					<hr>
+  					<div>
+  						<div class="panel">
+  							<div class="panel-body">
+								<div class="col-md-12 margin-top-50">
+									<h4 class="example-title">Agregar Archivos</h4>
+									<div class="col-md-12">
+										<h5 class="example-title">Cargar Archivo</h5>
+										<form class="form-group" id="frmCrearOrden_Archivos" action="" method="post" enctype="multipart/form-data">
+											<div class="input-group input-group-file">
+												<input type="text" class="form-control inputText" readonly="">
+												<span class="input-group-btn">
+													<span class="btn btn-success btn-file">
+													<i class="icon wb-more-horizontal" aria-hidden="true"></i>
+													Buscar
+													<input type="file" name="archivo" class="inputControl">
+													</span>
+													<button type="submit" class="btn btn-success">
+													<i class="icon wb-upload" aria-hidden="true"></i> Subir
+													</button>
+												</span>
+											</div>
+											<div class="progress progress-lg">
+												<div id="txtCrearOrden_ArchivoProgreso" class="progress-bar progress-bar-success" style="width: 0%;" role="progressbar"></div>
+											</div>
+										</form>
+									</div>
+									<div class="col-md-10">
+										<ul id="cntCrearOrden_Archivos" class="list-group list-group-dividered list-group-full">
+
+										</ul>
+									</div>
+								</div>
+  							</div>
+  						</div>
+  						
+  					</div>
+  					
 
 
 	  					

@@ -118,6 +118,7 @@ function editarOrden()
 		    autoclose: true,
 		    todayHighlight: true
 		});
+
 	$("#txteditarOrden_horaOcen, #txteditarOrden_RadicadoHora").timepicker({ 'timeFormat': 'H:i:s',  'scrollDefault': 'now'  });
 
 	$("#txteditarOrden_Zona").cargarCombo("Zonas", function()
@@ -159,7 +160,7 @@ function editarOrden()
 						Mensaje("Error", data);
 					}
 
-				})
+				});
 			} 
 		});
 	});

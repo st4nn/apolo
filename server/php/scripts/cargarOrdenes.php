@@ -112,7 +112,6 @@
             Municipio
             ";
 
-   
    $result = $link->query($sql);
 
    $idx = 0;
