@@ -256,6 +256,7 @@ function chartJS_CargarConvenciones(dataset, contenedor)
     </div>*/
   });
 }
+
 function obtenerPrefijo()
 {
   var f = new Date();
