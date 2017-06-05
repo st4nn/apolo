@@ -77,7 +77,7 @@
                   DatosUsuarios AS datosUsuarios 
                   INNER JOIN login_has_zonas ON login_has_zonas.idLogin = DatosUsuarios.idLogin
                 WHERE 
-                  datosUsuarios.idPerfil = 5
+                  datosUsuarios.idPerfil IN (5, 9)
                   AND login_has_zonas.idZona = '" . $idZona . "';";
 
         $result = $link->query($sql);
@@ -91,8 +91,6 @@
         }
 
         $Correos = substr($Correos, 0, -2);
-
-        $Correos .= ', jhonathan.espinosa@wsp.com';
 
         $mensaje = "Buen Día 
                <br><br>Se ha terminado el Levantamiento en un Proyecto,

@@ -11,10 +11,12 @@
                DatosUsuarios.Nombre,
                DatosUsuarios.Correo,
                DatosUsuarios.idPerfil,
+               Perfiles.Orden AS idPerfil_Orden,
                login_has_zonas.idZona
             FROM 
                Login
                INNER JOIN DatosUsuarios ON Login.idLogin = DatosUsuarios.idLogin
+               INNER JOIN Perfiles ON Perfiles.idPerfil = DatosUsuarios.idPerfil
                LEFT JOIN login_has_zonas ON Login.idLogin = login_has_zonas.idLogin
             WHERE 
                Login.idLogin = $idUsuario";
@@ -31,6 +33,7 @@
             public $Nombre;
             public $Correo;
             public $idPerfil;
+            public $idPerfil_Orden;
             public $Estado;
             public $Zonas;
          }
@@ -50,6 +53,7 @@
                $Usuarios->idEmpresa = utf8_encode($row['idEmpresa']);
                $Usuarios->Correo = utf8_encode($row['Correo']);
                $Usuarios->idPerfil = utf8_encode($row['idPerfil']);
+               $Usuarios->idPerfil_Orden = utf8_encode($row['idPerfil_Orden']);
                $Usuarios->Estado = utf8_encode($row['Estado']);
                //$Usuarios->Zonas[$idx] = utf8_encode($row['idZona']);
                array_push($Usuarios->Zonas, utf8_encode($row['idZona']));

@@ -32,6 +32,10 @@
 			  <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
 			  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
+			  <link rel="stylesheet" href="../assets/examples/css/uikit/modals.css">
+			  <link rel="stylesheet" href="../assets/examples/css/structure/ribbon.css">
+			  <link rel="stylesheet" href="../assets/examples/css/structure/alerts.css">
+
 			  <!--[if lt IE 9]>
 			    <script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
 			    <![endif]-->
@@ -53,7 +57,7 @@
 			  <link rel="stylesheet" href="../assets/examples/css/advanced/alertify.css"> 
 	</fixedHead>
 	<customCss>
-		
+		<link rel="stylesheet" href="../assets/vendor/jquery-labelauty/jquery-labelauty.css">
 	</customCss>
 </head>
 <body>
@@ -64,13 +68,16 @@
 			<div class="page-content">
 				<a href="misActividades.html" class="btn btn-info btn-lg btn-block"><i class="icon wb-arrow-left"></i> Volver al Listado</a>
 				<br><br>
-				<h4 class="panel-title">Datos de la OT</h4>
 				
 				<div class="row">
 					<div class="col-sm-6">
-						<div class="panel panel-bordered">
+						<div class="panel panel-bordered panel-dark">
 							<div class="panel-heading">
 								<h4 class="panel-title">Resumen de la OT</h4>
+								<div class="panel-actions">
+					            	<a class="panel-action icon wb-minus" aria-expanded="true" data-toggle="panel-collapse" aria-hidden="true"></a>
+					            	<a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+				              	</div>
 							</div>
 							<div class="panel-body">
 								<h1><small>Consecutivo Interno:</small><span id="lblCrearHoja_id"></span></h1>
@@ -84,12 +91,33 @@
 								<p class="col-md-12"><strong class="">Tiempo de Entrega:</strong> <span id="lblCrearHoja_TiempoDeEntrega"></span></p>
 							</div>
 						</div>
+
+						<div class="panel panel-bordered panel-dark">
+							<div class="panel-heading">
+								<h4 class="panel-title">Archivos Cargados</h4>
+								<div class="panel-actions">
+					            	<a class="panel-action icon wb-minus" aria-expanded="true" data-toggle="panel-collapse" aria-hidden="true"></a>
+					            	<a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+				              	</div>
+							</div>
+	  						<div class="panel-body">
+						      	<div class="col-md-10">
+						      		<ul id="cntCrearHoja_Archivos" class="list-group list-group-dividered list-group-full">
+					                
+					            	</ul>
+						      	</div>
+							</div>
+						</div>
 					</div>
 
 					<div class="col-sm-6">
-						<div class="panel panel-bordered">
+						<div class="panel panel-bordered panel-dark">
 							<div class="panel-heading">
 								<h4 class="panel-title">Datos de Contacto</h4>
+								<div class="panel-actions">
+					            	<a class="panel-action icon wb-minus" aria-expanded="true" data-toggle="panel-collapse" aria-hidden="true"></a>
+					            	<a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+				              	</div>
 							</div>
 							<div class="panel-body">
 								<p class="col-md-12"><strong class="">Contacto:</strong> <span id="lblCrearHoja_contactoNombre"></span></p>
@@ -97,26 +125,14 @@
 								<p class="col-md-12"><strong class="">Dirección:</strong> <span id="lblCrearHoja_contactoDireccion"></span></p>
 							</div>
 						</div>
-					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-sm-6 panel panel-bordered">
-						<div class="panel-heading">
-							<h4 class="panel-title">Archivos Cargados</h4>
-						</div>
-  						<div class="panel-body">
-					      	<div class="col-md-10">
-					      		<ul id="cntCrearHoja_Archivos" class="list-group list-group-dividered list-group-full">
-				                
-				            	</ul>
-					      	</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="panel panel-bordered">
+						<div class="panel panel-bordered panel-dark">
 							<div class="panel-heading">
 								<h4 class="panel-title">Cronograma</h4>
+								<div class="panel-actions">
+					            	<a class="panel-action icon wb-minus" aria-expanded="true" data-toggle="panel-collapse" aria-hidden="true"></a>
+					            	<a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+				              	</div>
 							</div>
 							<div class="panel-body">
 								<div id="cntCrearHoja_Cronograma" class="col-md-12">
@@ -232,12 +248,123 @@
 
 				<div class="row">
 					<input type="hidden" id="txtPanelOT_idOT">
-					<div class="col-md-12 panel">
-						<div class="panel-title">Actividades:</div>
-						<div class="panel-body">
-							<div id="cnPanelOT_Actividades" class="col-md-12">
-							</div>
+					<div class="col-md-12">
+						<div class="col-sm-7">
+							<div class="panel panel-bordered panel-dark">
+								<div class="panel-heading">
+									<h3 class="panel-title">Levantamiento</h3>
+									<div class="panel-actions">
+						            	<a class="panel-action icon wb-minus" aria-expanded="true" data-toggle="panel-collapse" aria-hidden="true"></a>
+						            	<a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+					              	</div>
+								</div>
+								<div class="panel-body">
+									<input type="hidden" id="txtReporte_idProyecto">
+									<div class="cols-sm-12 row">
+										<div class="col-sm-8 padding-10">
+											<div class="col-md-12" style="height: 70vh;" id="cntReporte_Mapa"></div>
+										</div>
+										<div class="col-sm-4">
+											<div class="example" style="min-height: 38vh;max-height: 38vh; overflow-y: scroll;">
+												<div class="ribbon">
+													<span class="ribbon-inner">Datos del Punto</span>
+												</div>
+												<div id="cntReporte_Datos">
+
+												</div>		                      
+											</div>
+
+											<div class="example" style="min-height: 30vh;max-height: 32vh; overflow-y: scroll;">
+											<div class="ribbon">
+											<span class="ribbon-inner">Fotos</span>
+											</div>
+											<div id="cntReporte_Imagenes">
+
+											</div>
+											</div>
+										</div>
+
+										<button class="btn btn-success btn-block" id="btnReporte_DescargarKML"><i class="icon wb-download"></i> Descargar KML</button>
+									</div>
+									
+								</div>
+							</div>	
 						</div>
+
+						<div class="col-sm-5">
+							<div class="panel panel-bordered panel-dark">
+								<div class="panel-heading">
+									<h3 class="panel-title">Control de Calidad</h3>
+									<div class="panel-actions">
+						            	<a class="panel-action icon wb-minus" aria-expanded="true" data-toggle="panel-collapse" aria-hidden="true"></a>
+						            	<a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+					              	</div>
+								</div>
+								<div class="panel-body" style="height: 77vh;">
+									<h3><small>Revisión no: </small> <span id="lblControlCalidad_Revision" class="red-600">0</span></h3>
+									<div class="nav-tabs-horizontal">
+										<ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+											<li class="col-sm-3" role="presentation">
+								            	<a data-toggle="tab" href="#cntControlDeCalidad_Historial" aria-controls="cntControlDeCalidad_Historial" role="tab">
+								            		<i class="icon " aria-hidden="true"></i>Historial
+								            	</a>
+								            </li>
+								            <li class="col-sm-3" role="presentation">
+								            	<a data-toggle="tab" href="#cntControlDeCalidad_Plano" aria-controls="cntControlDeCalidad_Plano" role="tab">
+								            		<i class="icon fa-map-marker" aria-hidden="true"></i>Plano
+								            	</a>
+								            </li>
+								            <li class="col-sm-3" role="presentation">
+								            	<a data-toggle="tab" href="#cntControlDeCalidad_Disenio" aria-controls="cntControlDeCalidad_Disenio" role="tab">
+								            		<i class="icon fa-pencil" aria-hidden="true"></i>Diseño
+								            	</a>
+								            </li>
+								            <li class="col-sm-3" role="presentation">
+								            	<a data-toggle="tab" href="#cntControlDeCalidad_Ficha" aria-controls="cntControlDeCalidad_Ficha" role="tab">
+								            		<i class="icon fa-list-ol" aria-hidden="true"></i>Ficha
+								            	</a>
+								            </li>
+								        </ul>
+									</div>
+									<div class="tab-content">
+										
+										<div class="tab-pane active" id="cntControlDeCalidad_Historial" role="tabpanel" style="height: 62vh; overflow-y: scroll; overflow-x: hidden;">
+											<div id="cntControlDeCalidad_Historial_list" class="list-group-dividered">
+												<div class="alert dark alert-danger alert-dismissible" role="alert">
+								                  El proyecto aún no tiene revisiones de Calidad
+								                </div>
+											</div>
+										</div>
+										<div class="tab-pane" id="cntControlDeCalidad_Plano" role="tabpanel" style="height: 62vh; overflow-y: scroll; overflow-x: hidden;">
+											<div id="cntControlDeCalidad_Plano_list" class="list-group-dividered">
+											</div>
+										</div>
+
+										<div class="tab-pane" id="cntControlDeCalidad_Disenio" role="tabpanel" style="height: 62vh; overflow-y: scroll; overflow-x: hidden;">
+											<div id="cntControlDeCalidad_Disenio_list" class="list-group-dividered">
+											</div>
+										</div>
+
+										<div class="tab-pane" id="cntControlDeCalidad_Ficha" role="tabpanel" style="height: 62vh; overflow-y: scroll; overflow-x: hidden;">
+											<div id="cntControlDeCalidad_Ficha_list" class="list-group-dividered">
+												<div class="alert dark alert-danger alert-dismissible" role="alert">
+								                  El proyecto aún no tiene un Levantamiento
+								                </div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel-footer">
+									<button type="button" id="btnControlCalidad_Guardar" class="btn btn-success btn-block">Guardar</button>
+								</div>
+							</div>	
+						</div>
+
+					</div>
+					<div clas="row">
+						<button id="btnPanel_IrAHojaDeTrabajo" class="btn btn-warning btn-block">Ir a la hoja de Trabajo</button>
+					</div>
+					<div id="cnPanelOT_Actividades" class="col-md-12">
 					</div>
 				</div>
 				
@@ -299,6 +426,21 @@
               </div>
             </div>
         </div>
+
+        <div class="modal fade modal-fill-in" id="cntControlCalidad_Modal" aria-hidden="false" aria-labelledby="cntControlCalidad_Modal" role="dialog" tabindex="-1">
+            <div class="col-sm-12">
+            	<div id="cntControlCalidad_Revision" class="col-sm-12" style="height: 90vh;overflow-y: scroll;">
+            		<h2>Plano</h2>
+            		<div id="cntControlCalidad_Revision_Plano" class="list-group-dividered row"></div>
+            		<h2>Diseño</h2>
+            		<div id="cntControlCalidad_Revision_Disenio" class="list-group-dividered row"></div>
+            		<h2>Ficha</h2>
+            		<div id="cntControlCalidad_Revision_Ficha" class="list-group-dividered row"></div>
+            	</div>
+            	<br><br><br><br><br><br>
+            	<button id="btnControlCalidad_Cerrar" class="btn btn-block btn-success"><i class="icon wb-close"></i> Cerrar</button>
+            </div>
+        </div>
 	</content>
 	<fixedScripts>
 		<script src="../assets/vendor/jquery/jquery.js"></script>
@@ -342,10 +484,16 @@
 		  <script src="../assets/vendor/alertify-js/alertify.js"></script>
 		  <script src="../assets/js/components/alertify-js.js"></script> 
 
+		  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCqsaOPb3d9wCtzrh-7XGN4dnMy44qV5ns"></script>
+		  <script src="../assets/vendor/gmaps/gmaps.js"></script>
+		  <script src="../assets/js/components/gmaps.js"></script>
+
 		  <script src="../assets/js/components/panel.js"></script>
 
 		<customscripts>
 			<script src="../assets/js/components/jquery.form.js"></script>
+			<script src="../assets/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+			<script src="../assets/js/components/jquery-labelauty.js"></script>
 		</customscripts>
 	</footer>
 </body>

@@ -170,7 +170,7 @@
 
             $mensaje .= $zonaSinCoordinador;
 
-            EnviarCorreo("$Destinatario", "Creación de OT", $mensaje)
+            EnviarCorreo($Correos, "Creación de OT", $mensaje);
       } else
       {
          echo "Hubo un error desconocido " . $link->error;

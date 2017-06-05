@@ -7,12 +7,12 @@
    {
       include("datosUsuario.php"); 
       $Usuario = datosUsuario($idUsuario);
-      $idPerfil = $Usuario->idPerfil;
+      $idPerfil = $Usuario->idPerfil_Orden;
    }
 
    $link = Conectar();
 
-   $sql = "SELECT idPerfil as id, Nombre FROM Perfiles WHERE idPerfil >= " . $idPerfil . ";";
+   $sql = "SELECT idPerfil as id, Nombre FROM Perfiles WHERE Orden >= " . $idPerfil . ";";
    $result = $link->query($sql);
 
    $idx = 0;
