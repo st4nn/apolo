@@ -4,11 +4,11 @@
 
    
    $idUsuario = addslashes($_POST['usuario']);
-   $Parametro = addslashes($_POST['Parametro']);
+   /*$Parametro = addslashes($_POST['Parametro']);
    $fechaFin = addslashes($_POST['fechaFin']);
    $fechaIni = addslashes($_POST['fechaIni']);
    $fechaFinCump = addslashes($_POST['fechaFinCump']);
-   $fechaIniCump = addslashes($_POST['fechaIniCump']);
+   $fechaIniCump = addslashes($_POST['fechaIniCump']);*/
    $Estado = addslashes($_POST['Estado']);
 
    $idPerfil = 0; 
@@ -31,14 +31,14 @@
       $where .= " AND OT.idZona IN ($Zonas) ";
    }
 
-   if ($fechaIni <> "")
+   /*if ($fechaIni <> "")
    {
       $where .= " AND fechaCreacion >= '$fechaIni 00:00:00' ";
    }
    if ($fechaFin <> "")
    {
       $where .= " AND fechaCreacion <= '$fechaFin 23:59:59' ";
-   }
+   }*/
 
    if ($Estado <> 0)
    {

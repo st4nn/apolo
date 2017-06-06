@@ -143,7 +143,7 @@ function controlarPermisos()
 {
   if (Permisos == null)
   {
-    $.post('../server/php/scripts/cargarRestricciones.php', {Perfil: Usuario.idPerfil}, function(data, textStatus, xhr) 
+    $.post('../server/php/scripts/cargarRestricciones.php', {Usuario: Usuario.id}, function(data, textStatus, xhr) 
     {
       Permisos = data;
       aplicarRestricciones();

@@ -2,14 +2,17 @@
   include("../conectar.php"); 
    $link = Conectar();
 
-   $idPerfil = $_POST['Perfil'];
+   $idUsuario = $_POST['Usuario'];
+
+   include("datosUsuario.php"); 
+   $Usuario = datosUsuario($idUsuario);
+
    $sql = "SELECT 
                *
             FROM
                perfiles_nothas_funciones
                INNER JOIN funciones ON funciones.idFuncion = perfiles_nothas_funciones.idFunciones
-            WHERE idPerfil = $idPerfil;";
-            
+            WHERE idPerfil = '" . $Usuario->idPerfil . "';";            
 
    $result = $link->query($sql);
    $idx=0;
